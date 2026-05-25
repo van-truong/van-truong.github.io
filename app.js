@@ -11,6 +11,14 @@
 
 const hats = [
   {
+    id: 'home',
+    label: 'Home',
+    tagline: 'the many-hats overview',
+    asset: 'hats/home.svg',
+    alt: 'Home',
+    isHome: true,
+  },
+  {
     id: 'scientist',
     label: 'PhDiva',
     tagline: 'computational scientist',
@@ -74,6 +82,16 @@ hats.forEach(hat => {
 
 /* ── Core toggle ──────────────────────────────────────────────────── */
 function toggleHat(id) {
+  // Home button always returns to the landing view, regardless of state
+  if (id === 'home') {
+    removeCurrentHat();
+    showSection('home');
+    setTheme('home');
+    updateDockAria('home');
+    setHash('');
+    currentHatId = null;
+    return;
+  }
   if (currentHatId === id) {
     removeCurrentHat();
     showSection('home');
@@ -89,6 +107,7 @@ function toggleHat(id) {
 function applyHat(id) {
   const hat = hats.find(h => h.id === id);
   if (!hat) return;
+  if (hat.isHome) { toggleHat('home'); return; }
 
   removeCurrentHat();
 
@@ -177,16 +196,21 @@ window.addEventListener('hashchange', () => {
   const hash = window.location.hash.slice(1);
   if (!hash || hash === 'home') {
     if (currentHatId !== null) toggleHat(currentHatId);
-  } else if (hats.some(h => h.id === hash) && hash !== currentHatId) {
-    applyHat(hash);
+    updateDockAria('home');
+  } else {
+    const hat = hats.find(h => h.id === hash);
+    if (hat && !hat.isHome && hash !== currentHatId) applyHat(hash);
   }
 });
 
 /* ── Initial state ────────────────────────────────────────────────── */
 (function init() {
   const hash = window.location.hash.slice(1);
-  if (hats.some(h => h.id === hash)) {
+  const hat = hats.find(h => h.id === hash);
+  if (hat && !hat.isHome) {
     applyHat(hash);
+  } else {
+    updateDockAria('home');
   }
 })();
 
