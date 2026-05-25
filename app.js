@@ -13,7 +13,7 @@ const hats = [
   {
     id: 'home',
     label: 'Home',
-    tagline: 'the many-hats overview',
+    tagline: 'a true side quest queen',
     asset: 'hats/home.svg',
     alt: 'Home',
     isHome: true,

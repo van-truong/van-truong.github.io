@@ -1216,6 +1216,45 @@ body.reading .page {
   margin-top: 2px;
 }
 
+/* In-page section nav (sticky pill row used on Sporty + Rugged) */
+.section-nav {
+  position: sticky;
+  top: 0.6rem;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.7rem;
+  margin: 0.25rem 0 1.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px -8px rgba(0, 0, 0, 0.18);
+}
+.section-nav a {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  transition: background 0.18s, color 0.18s;
+}
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  background: var(--accent-dim);
+  color: var(--text);
+  outline: none;
+}
+/* Anchor offset so sticky nav doesn't overlap section headings */
+.content [id] { scroll-margin-top: 5rem; }
+
 /* Rugged-page trip subsections (Backpacking trip-by-trip) */
 .trip {
   margin: 1.75rem 0 1.25rem;
