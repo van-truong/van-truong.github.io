@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Rainbow paint dabs, splatters, brush strokes — plus brushes, palette, pencils -->
+
+  <!-- Red brush stroke (top-left) -->
+  <path d="M 20 50 Q 60 35, 95 55 Q 100 60, 90 65 Q 55 50, 20 60 Z"
+        fill="#e63946" opacity="0.22"/>
+
+  <!-- Orange dab (top-right) -->
+  <ellipse cx="240" cy="65" rx="22" ry="10" fill="#f4a261" opacity="0.26" transform="rotate(-15 240 65)"/>
+
+  <!-- Multi-color splatter cluster (mid-left) -->
+  <circle cx="40" cy="160" r="6" fill="#ffd166" opacity="0.30"/>
+  <circle cx="55" cy="172" r="3" fill="#e63946" opacity="0.24"/>
+  <circle cx="62" cy="155" r="2" fill="#4caf6e" opacity="0.28"/>
+  <circle cx="32" cy="178" r="2.5" fill="#4d8ce8" opacity="0.30"/>
+
+  <!-- Green curved brush (center) -->
+  <path d="M 100 130 Q 160 110, 215 145 Q 220 150, 213 155 Q 160 125, 105 140 Z"
+        fill="#4caf6e" opacity="0.20"/>
+
+  <!-- Blue dab (bottom-right) -->
+  <ellipse cx="245" cy="245" rx="18" ry="7" fill="#4d8ce8" opacity="0.24" transform="rotate(35 245 245)"/>
+
+  <!-- Multi-color splatter (bottom-left) -->
+  <circle cx="80" cy="250" r="5" fill="#9c5fbe" opacity="0.24"/>
+  <circle cx="95" cy="262" r="2" fill="#ffd166" opacity="0.30"/>
+  <circle cx="68" cy="265" r="1.8" fill="#e63946" opacity="0.24"/>
+
+  <!-- Purple brush mark (top-center) -->
+  <path d="M 150 25 Q 165 20, 175 30 Q 178 33, 173 35 Q 162 28, 150 32 Z"
+        fill="#9c5fbe" opacity="0.20"/>
+
+  <!-- Soft yellow halo (center) -->
+  <ellipse cx="160" cy="200" rx="40" ry="14" fill="#ffd166" opacity="0.16"/>
+
+  <!-- Blue drip mark -->
+  <path d="M 200 80 Q 201 90, 199 110 Q 200 115, 202 110 Q 204 95, 203 80 Z"
+        fill="#4d8ce8" opacity="0.20"/>
+
+  <!-- Green dab (right-mid) -->
+  <ellipse cx="270" cy="170" rx="14" ry="6" fill="#4caf6e" opacity="0.22" transform="rotate(-40 270 170)"/>
+
+  <!-- Orange drip -->
+  <path d="M 130 80 Q 131 95, 129 115 Q 130 120, 132 115 Q 134 100, 133 80 Z"
+        fill="#f4a261" opacity="0.20"/>
+
+  <!-- Purple splatter (top-mid-right) -->
+  <circle cx="200" cy="50" r="3" fill="#9c5fbe" opacity="0.25"/>
+  <circle cx="210" cy="60" r="1.5" fill="#9c5fbe" opacity="0.30"/>
+
+  <!-- ─── Art palette (mid-left) ─── -->
+  <g transform="translate(30,110)" opacity="0.24">
+    <!-- Palette body (kidney shape) -->
+    <path d="M 0 0 Q 4 -22, 28 -22 Q 56 -24, 60 -4 Q 60 14, 38 16 Q 32 18, 26 15 Q 4 18, 0 0 Z"
+          fill="#d4a868" stroke="#7a4f1f" stroke-width="0.8"/>
+    <!-- Thumb hole -->
+    <ellipse cx="14" cy="-2" rx="4.5" ry="3" fill="none" stroke="#7a4f1f" stroke-width="0.8"/>
+    <!-- Paint blobs (rainbow!) -->
+    <circle cx="24" cy="-13" r="3.2" fill="#e63946"/>
+    <circle cx="34" cy="-15" r="2.8" fill="#f4a261"/>
+    <circle cx="44" cy="-12" r="3.2" fill="#ffd166"/>
+    <circle cx="50" cy="-3" r="2.8" fill="#4caf6e"/>
+    <circle cx="44" cy="7"  r="2.8" fill="#4d8ce8"/>
+    <circle cx="32" cy="9"  r="3.2" fill="#9c5fbe"/>
+  </g>
+
+  <!-- ─── Paintbrush 1 (right side, dipped in blue) ─── -->
+  <g transform="translate(170,90) rotate(-30)" opacity="0.26">
+    <!-- Wooden handle -->
+    <rect x="0" y="-2" width="48" height="4" rx="1.5" fill="#8b5a2b"/>
+    <!-- Handle gloss -->
+    <rect x="2" y="-2" width="44" height="1" fill="#a76f3a" opacity="0.7"/>
+    <!-- Ferrule (metal band) -->
+    <rect x="48" y="-3.5" width="9" height="7" fill="#aaa"/>
+    <line x1="50" y1="-3.5" x2="50" y2="3.5" stroke="#777" stroke-width="0.4"/>
+    <line x1="54" y1="-3.5" x2="54" y2="3.5" stroke="#777" stroke-width="0.4"/>
+    <!-- Bristles -->
+    <path d="M 57 -3.5 L 70 -5 L 73 0 L 70 5 L 57 3.5 Z" fill="#4d8ce8"/>
+    <!-- Bristle highlight -->
+    <path d="M 58 -2 L 68 -3.5" stroke="#7ab0ef" stroke-width="0.6"/>
+    <!-- Paint drip from tip -->
+    <ellipse cx="74" cy="1" rx="1.5" ry="2" fill="#4d8ce8" opacity="0.85"/>
+  </g>
+
+  <!-- ─── Paintbrush 2 (bottom-left, smaller, dipped in red) ─── -->
+  <g transform="translate(40,215) rotate(40)" opacity="0.24">
+    <rect x="0" y="-1.6" width="36" height="3.2" rx="1.2" fill="#5a3818"/>
+    <rect x="36" y="-2.6" width="6" height="5.2" fill="#aaa"/>
+    <path d="M 42 -2.6 L 52 -4 L 54 0 L 52 4 L 42 2.6 Z" fill="#e63946"/>
+    <ellipse cx="55" cy="0" rx="1.2" ry="1.6" fill="#e63946" opacity="0.85"/>
+  </g>
+
+  <!-- ─── Pencil 1 (top-mid, yellow body) ─── -->
+  <g transform="translate(140,40) rotate(15)" opacity="0.24">
+    <!-- Eraser metal -->
+    <rect x="-7" y="-1.8" width="2" height="3.6" fill="#999"/>
+    <!-- Eraser -->
+    <rect x="-5" y="-1.6" width="3" height="3.2" fill="#f4a4af"/>
+    <!-- Body -->
+    <rect x="-2" y="-1.6" width="32" height="3.2" fill="#ffd166"/>
+    <!-- Stripe -->
+    <line x1="-2" y1="-1.6" x2="30" y2="-1.6" stroke="#c89a3a" stroke-width="0.4"/>
+    <line x1="-2" y1="1.6"  x2="30" y2="1.6"  stroke="#c89a3a" stroke-width="0.4"/>
+    <!-- Wood tip -->
+    <path d="M 30 -1.6 L 36 0 L 30 1.6 Z" fill="#d4a868" stroke="#7a4f1f" stroke-width="0.3"/>
+    <!-- Lead -->
+    <path d="M 34 -0.5 L 36 0 L 34 0.5 Z" fill="#2a2a2a"/>
+  </g>
+
+  <!-- ─── Pencil 2 (bottom-right diagonal, green body) ─── -->
+  <g transform="translate(225,205) rotate(-55)" opacity="0.24">
+    <rect x="-6" y="-1.8" width="2" height="3.6" fill="#999"/>
+    <rect x="-4" y="-1.6" width="3" height="3.2" fill="#f4a4af"/>
+    <rect x="-1" y="-1.6" width="28" height="3.2" fill="#4caf6e"/>
+    <line x1="-1" y1="-1.6" x2="27" y2="-1.6" stroke="#2d7a4a" stroke-width="0.4"/>
+    <line x1="-1" y1="1.6"  x2="27" y2="1.6"  stroke="#2d7a4a" stroke-width="0.4"/>
+    <path d="M 27 -1.6 L 33 0 L 27 1.6 Z" fill="#d4a868" stroke="#7a4f1f" stroke-width="0.3"/>
+    <path d="M 31 -0.5 L 33 0 L 31 0.5 Z" fill="#2a2a2a"/>
+  </g>
+
+  <!-- ─── Pencil 3 (small, mid-top-left, purple body) ─── -->
+  <g transform="translate(72,32) rotate(-25)" opacity="0.22">
+    <rect x="-5" y="-1.4" width="1.6" height="2.8" fill="#999"/>
+    <rect x="-3.4" y="-1.2" width="2.4" height="2.4" fill="#f4a4af"/>
+    <rect x="-1" y="-1.2" width="22" height="2.4" fill="#9c5fbe"/>
+    <path d="M 21 -1.2 L 26 0 L 21 1.2 Z" fill="#d4a868" stroke="#7a4f1f" stroke-width="0.3"/>
+    <path d="M 24 -0.4 L 26 0 L 24 0.4 Z" fill="#2a2a2a"/>
+  </g>
+
+  <!-- Tiny rainbow dots scattered (bottom) -->
+  <circle cx="130" cy="280" r="2"   fill="#e63946" opacity="0.26"/>
+  <circle cx="160" cy="285" r="1.5" fill="#f4a261" opacity="0.26"/>
+  <circle cx="185" cy="280" r="2"   fill="#ffd166" opacity="0.28"/>
+  <circle cx="210" cy="285" r="1.5" fill="#4caf6e" opacity="0.26"/>
+  <circle cx="235" cy="280" r="2"   fill="#4d8ce8" opacity="0.26"/>
+</svg>

@@ -1,0 +1,60 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Van Quynh Thi Truong</title>
+  <meta name="description" content="Travel essays, vlogs, and notes from the road by Van Quynh Thi Truong.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body data-theme="traveler" class="reading">
+
+  <main class="page page--blog-index">
+
+    <nav class="post-back-nav">
+      <a href="{{ '/' | relative_url }}">← home</a>
+    </nav>
+
+    <header class="blog-hero">
+      <p class="post-kicker">from the road</p>
+      <h1 class="post-title">Blog</h1>
+      <p class="post-subtitle">Stories, essays, and the occasional vlog from wherever I happen to be.</p>
+    </header>
+
+    {% if site.posts.size > 0 %}
+      <ul class="post-list">
+        {% for post in site.posts %}
+          <li class="post-list-item">
+            <a href="{{ post.url | relative_url }}">
+              <time class="post-list-date" datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%b %-d, %Y" }}
+              </time>
+              <h2 class="post-list-title">{{ post.title }}</h2>
+              {% if post.subtitle %}
+                <p class="post-list-subtitle">{{ post.subtitle }}</p>
+              {% elsif post.excerpt %}
+                <p class="post-list-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+              {% endif %}
+              {% if post.youtube %}<span class="post-list-tag">▶ video</span>{% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="post-empty">No posts yet — back soon.</p>
+    {% endif %}
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© Van Quynh Thi Truong · <a href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>

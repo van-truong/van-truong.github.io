@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340">
+  <!-- Sparse tiny hat silhouettes hinting at the many hats theme -->
+
+  <!-- Mini PhD cap -->
+  <g transform="translate(40,60)" opacity="0.09" fill="#1d1c1a">
+    <path d="M 0 8 L 14 3 L 28 8 L 14 13 Z"/>
+    <ellipse cx="14" cy="11" rx="7" ry="2.5"/>
+    <line x1="22" y1="6" x2="26" y2="14" stroke="#1d1c1a" stroke-width="0.5"/>
+  </g>
+
+  <!-- Mini beret -->
+  <g transform="translate(230,90)" opacity="0.09" fill="#1d1c1a">
+    <ellipse cx="12" cy="8" rx="14" ry="6"/>
+    <circle cx="18" cy="3" r="1.5"/>
+  </g>
+
+  <!-- Mini bucket hat -->
+  <g transform="translate(90,210)" opacity="0.09" fill="#1d1c1a">
+    <ellipse cx="14" cy="11" rx="15" ry="3"/>
+    <path d="M 5 11 Q 4 4, 14 3 Q 24 4, 23 11 Z"/>
+  </g>
+
+  <!-- Another tiny cap (witch/sun-like — placeholder for future hat) -->
+  <g transform="translate(270,250)" opacity="0.08" fill="#1d1c1a">
+    <ellipse cx="12" cy="11" rx="13" ry="2.5"/>
+    <path d="M 8 11 Q 10 2, 12 1 Q 14 2, 16 11 Z"/>
+  </g>
+
+  <!-- Mini PhD cap variation -->
+  <g transform="translate(170,280)" opacity="0.09" fill="#1d1c1a">
+    <path d="M 0 8 L 14 3 L 28 8 L 14 13 Z"/>
+    <ellipse cx="14" cy="11" rx="7" ry="2.5"/>
+  </g>
+
+  <!-- Tiny stars / dots -->
+  <g fill="#c0394a" opacity="0.22">
+    <circle cx="150" cy="40" r="1.5"/>
+    <circle cx="300" cy="160" r="1.2"/>
+    <circle cx="50" cy="160" r="1"/>
+    <circle cx="200" cy="180" r="1.3"/>
+    <circle cx="120" cy="320" r="1.5"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none">
+  <title>Baseball Cap</title>
+  <!-- Brim (curved, hangs to one side) -->
+  <path d="M 60 118 Q 30 124, 12 132 Q 8 138, 14 140 Q 50 132, 95 130 Z" fill="#152547"/>
+  <path d="M 60 118 Q 30 124, 12 132 Q 8 138, 14 140 Q 50 132, 95 130 Z" fill="#1d3160" opacity="0.5"/>
+
+  <!-- Crown -->
+  <path d="M 65 122 Q 50 60, 130 50 Q 200 55, 198 122 Q 190 130, 130 132 Q 78 132, 65 122 Z" fill="#1d3160"/>
+
+  <!-- Panel seams -->
+  <path d="M 130 50 Q 120 90, 110 130" stroke="#0e1c3e" stroke-width="1" opacity="0.5" fill="none"/>
+  <path d="M 130 50 Q 150 90, 170 128" stroke="#0e1c3e" stroke-width="1" opacity="0.5" fill="none"/>
+  <path d="M 130 50 Q 95 80, 70 118" stroke="#0e1c3e" stroke-width="1" opacity="0.5" fill="none"/>
+
+  <!-- Front logo patch -->
+  <circle cx="115" cy="100" r="16" fill="#d63a3a"/>
+  <text x="115" y="108" font-family="Impact, 'Arial Black', sans-serif" font-weight="900" font-size="20" fill="#fff" text-anchor="middle">V</text>
+
+  <!-- Button on top -->
+  <circle cx="128" cy="50" r="3.5" fill="#0e1c3e"/>
+
+  <!-- Bottom stitching detail -->
+  <path d="M 65 122 Q 130 128, 198 122" stroke="#0e1c3e" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.6" fill="none"/>
+</svg>

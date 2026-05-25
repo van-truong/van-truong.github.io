@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <style>
+      .contour { fill: none; stroke: #3d5232; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Mountain peak 1 (concentric closed contour lines) -->
+  <g opacity="0.16">
+    <path d="M 95 110 Q 115 95, 135 110 Q 145 130, 135 150 Q 115 165, 95 150 Q 85 130, 95 110 Z" class="contour"/>
+    <path d="M 80 95 Q 115 75, 150 95 Q 165 130, 150 165 Q 115 185, 80 165 Q 65 130, 80 95 Z" class="contour"/>
+    <path d="M 65 80 Q 115 55, 165 80 Q 185 130, 165 180 Q 115 205, 65 180 Q 45 130, 65 80 Z" class="contour"/>
+    <path d="M 50 65 Q 115 35, 180 65 Q 205 130, 180 195 Q 115 225, 50 195 Q 25 130, 50 65 Z" class="contour"/>
+    <path d="M 35 50 Q 115 15, 195 50 Q 225 130, 195 210 Q 115 245, 35 210 Q 5 130, 35 50 Z" class="contour"/>
+  </g>
+
+  <!-- Mountain peak 2 (bottom right) -->
+  <g opacity="0.14">
+    <path d="M 290 290 Q 305 280, 320 290 Q 327 305, 320 320 Q 305 327, 290 320 Q 283 305, 290 290 Z" class="contour"/>
+    <path d="M 278 278 Q 305 265, 332 278 Q 342 305, 332 332 Q 305 342, 278 332 Q 268 305, 278 278 Z" class="contour"/>
+    <path d="M 265 265 Q 305 245, 345 265 Q 360 305, 345 345 Q 305 360, 265 345 Q 250 305, 265 265 Z" class="contour"/>
+    <path d="M 250 250 Q 305 225, 360 250 Q 380 305, 360 360 Q 305 380, 250 360 Q 230 305, 250 250 Z" class="contour"/>
+  </g>
+
+  <!-- Small valley (top right) -->
+  <g opacity="0.12">
+    <path d="M 280 60 Q 295 50, 310 60 Q 315 75, 310 90 Q 295 100, 280 90 Q 275 75, 280 60 Z" class="contour"/>
+    <path d="M 270 50 Q 295 35, 320 50 Q 328 75, 320 100 Q 295 110, 270 100 Q 262 75, 270 50 Z" class="contour"/>
+    <path d="M 258 38 Q 295 20, 332 38 Q 345 75, 332 115 Q 295 130, 258 115 Q 245 75, 258 38 Z" class="contour"/>
+  </g>
+
+  <!-- Bottom left small hill -->
+  <g opacity="0.13">
+    <path d="M 50 320 Q 65 312, 80 320 Q 85 332, 80 344 Q 65 350, 50 344 Q 45 332, 50 320 Z" class="contour"/>
+    <path d="M 38 310 Q 65 298, 92 310 Q 100 332, 92 354 Q 65 364, 38 354 Q 30 332, 38 310 Z" class="contour"/>
+  </g>
+
+  <!-- Tiny pine sprigs scattered -->
+  <g stroke="#3d5232" stroke-width="1.2" opacity="0.2" fill="none">
+    <g transform="translate(220, 60)">
+      <line x1="0" y1="0" x2="0" y2="14"/>
+      <line x1="0" y1="3" x2="-4" y2="6"/>
+      <line x1="0" y1="3" x2="4" y2="6"/>
+      <line x1="0" y1="7" x2="-3" y2="10"/>
+      <line x1="0" y1="7" x2="3" y2="10"/>
+    </g>
+    <g transform="translate(370, 180)">
+      <line x1="0" y1="0" x2="0" y2="14"/>
+      <line x1="0" y1="3" x2="-4" y2="6"/>
+      <line x1="0" y1="3" x2="4" y2="6"/>
+      <line x1="0" y1="7" x2="-3" y2="10"/>
+      <line x1="0" y1="7" x2="3" y2="10"/>
+    </g>
+    <g transform="translate(160, 360)">
+      <line x1="0" y1="0" x2="0" y2="14"/>
+      <line x1="0" y1="3" x2="-4" y2="6"/>
+      <line x1="0" y1="3" x2="4" y2="6"/>
+      <line x1="0" y1="7" x2="-3" y2="10"/>
+      <line x1="0" y1="7" x2="3" y2="10"/>
+    </g>
+  </g>
+
+  <!-- Small compass rose (faded, decorative) -->
+  <g transform="translate(360, 50)" opacity="0.18" stroke="#3d5232" fill="none" stroke-width="0.8">
+    <circle cx="0" cy="0" r="10"/>
+    <line x1="0" y1="-12" x2="0" y2="12"/>
+    <line x1="-12" y1="0" x2="12" y2="0"/>
+    <text x="-2" y="-14" font-size="6" font-family="serif" fill="#3d5232" stroke="none">N</text>
+  </g>
+</svg>

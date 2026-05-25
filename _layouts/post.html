@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} — Van Quynh Thi Truong</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+<body data-theme="traveler" class="reading">
+
+  <main class="page page--post">
+
+    <nav class="post-back-nav">
+      <a href="{{ '/blog/' | relative_url }}">← all posts</a>
+      <span class="dot">·</span>
+      <a href="{{ '/' | relative_url }}">home</a>
+    </nav>
+
+    <article class="post">
+      <header class="post-header">
+        <p class="post-kicker">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+          {% if page.location %} · <span class="post-loc">{{ page.location }}</span>{% endif %}
+        </p>
+        <h1 class="post-title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+          <p class="post-subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+      </header>
+
+      {% if page.youtube %}
+        <div class="post-video">
+          <iframe
+            src="https://www.youtube.com/embed/{{ page.youtube }}"
+            title="{{ page.title }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      {% endif %}
+
+      <div class="post-body">
+        {{ content }}
+      </div>
+
+      <footer class="post-footer">
+        <p>— Van</p>
+        <p class="post-share">
+          <a href="mailto:scientistvan@gmail.com">Reply by email</a>
+        </p>
+      </footer>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© Van Quynh Thi Truong · <a href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>

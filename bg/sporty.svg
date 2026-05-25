@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <defs>
+    <style>
+      .line { stroke: #1d3160; fill: none; stroke-width: 1.2; }
+      .thick { stroke: #1d3160; fill: none; stroke-width: 1.6; }
+      .fill { fill: #1d3160; }
+      .sketch { stroke: #1d3160; fill: none; stroke-width: 1; stroke-dasharray: 2 1.5; }
+    </style>
+  </defs>
+
+  <!-- Diagonal jersey stripes (very faint) -->
+  <g opacity="0.06">
+    <path d="M -50 50 L 370 -90" stroke="#1d3160" stroke-width="14"/>
+    <path d="M -50 200 L 370 60" stroke="#1d3160" stroke-width="14"/>
+    <path d="M -50 360 L 370 220" stroke="#1d3160" stroke-width="14"/>
+  </g>
+
+  <!-- Whistle (top-left) -->
+  <g transform="translate(50,50)" opacity="0.15">
+    <circle cx="0" cy="0" r="6" class="line"/>
+    <path d="M 5 -2 Q 14 -6, 18 -2 Q 22 2, 18 4" class="line"/>
+    <circle cx="0" cy="0" r="2" class="fill"/>
+  </g>
+
+  <!-- Baseball (top-center) -->
+  <g transform="translate(160,45)" opacity="0.17">
+    <circle cx="0" cy="0" r="9" class="line"/>
+    <path d="M -6 -6 Q 0 -9, 6 -6" class="line" stroke-width="0.7"/>
+    <path d="M -6 6 Q 0 9, 6 6" class="line" stroke-width="0.7"/>
+    <!-- stitches -->
+    <g stroke="#1d3160" stroke-width="0.5" fill="none">
+      <line x1="-4" y1="-7.5" x2="-4" y2="-5.5"/>
+      <line x1="-1" y1="-8.3" x2="-1" y2="-6.3"/>
+      <line x1="2"  y1="-8.3" x2="2"  y2="-6.3"/>
+      <line x1="5"  y1="-7.5" x2="5"  y2="-5.5"/>
+      <line x1="-4" y1="5.5"  x2="-4" y2="7.5"/>
+      <line x1="-1" y1="6.3"  x2="-1" y2="8.3"/>
+      <line x1="2"  y1="6.3"  x2="2"  y2="8.3"/>
+      <line x1="5"  y1="5.5"  x2="5"  y2="7.5"/>
+    </g>
+  </g>
+
+  <!-- Frisbee (top-right) -->
+  <g transform="translate(260,55)" opacity="0.16">
+    <ellipse cx="0" cy="0" rx="26" ry="8" class="line"/>
+    <ellipse cx="0" cy="-2" rx="22" ry="6" class="line"/>
+    <ellipse cx="0" cy="-4" rx="18" ry="4" class="line"/>
+  </g>
+
+  <!-- Bike tire (upper-center) -->
+  <g transform="translate(160,118)" opacity="0.16">
+    <circle cx="0" cy="0" r="22" class="thick"/>
+    <circle cx="0" cy="0" r="18" class="line"/>
+    <circle cx="0" cy="0" r="2.4" class="fill"/>
+    <!-- Spokes -->
+    <line x1="-20" y1="0"  x2="20"  y2="0"   class="line" stroke-width="0.6"/>
+    <line x1="0"   y1="-20" x2="0"  y2="20"  class="line" stroke-width="0.6"/>
+    <line x1="-14" y1="-14" x2="14" y2="14"  class="line" stroke-width="0.6"/>
+    <line x1="-14" y1="14"  x2="14" y2="-14" class="line" stroke-width="0.6"/>
+    <line x1="-7"  y1="-19" x2="7"  y2="19"  class="line" stroke-width="0.5"/>
+    <line x1="-19" y1="-7"  x2="19" y2="7"   class="line" stroke-width="0.5"/>
+  </g>
+
+  <!-- American football (right-mid) -->
+  <g transform="translate(265,150) rotate(25)" opacity="0.16">
+    <ellipse cx="0" cy="0" rx="18" ry="8" class="line"/>
+    <line x1="-2" y1="0" x2="2" y2="0" class="line" stroke-width="0.7"/>
+    <line x1="-3" y1="-1.5" x2="-3" y2="1.5" class="line" stroke-width="0.7"/>
+    <line x1="-1" y1="-1.5" x2="-1" y2="1.5" class="line" stroke-width="0.7"/>
+    <line x1="1"  y1="-1.5" x2="1"  y2="1.5" class="line" stroke-width="0.7"/>
+    <line x1="3"  y1="-1.5" x2="3"  y2="1.5" class="line" stroke-width="0.7"/>
+  </g>
+
+  <!-- Rugby ball (mid-left) -->
+  <g transform="translate(50,170) rotate(-25)" opacity="0.16">
+    <ellipse cx="0" cy="0" rx="22" ry="11" class="line"/>
+    <line x1="-12" y1="0" x2="12" y2="0" class="line"/>
+    <line x1="-9" y1="-3" x2="-9" y2="3" class="line"/>
+    <line x1="-3" y1="-3" x2="-3" y2="3" class="line"/>
+    <line x1="3" y1="-3" x2="3" y2="3" class="line"/>
+    <line x1="9" y1="-3" x2="9" y2="3" class="line"/>
+  </g>
+
+  <!-- Beach scene: waves, sand, palm trees (center, low) -->
+  <g transform="translate(95,235)" opacity="0.18">
+    <!-- Sand / shoreline -->
+    <path d="M -10 0 Q 30 -3, 70 0 T 150 0" class="thick"/>
+
+    <!-- Waves rolling in -->
+    <path d="M -10 8 Q -4 6, 2 8 T 14 8 T 26 8 T 38 8 T 50 8" class="line" stroke-width="0.7"/>
+    <path d="M 55 8 Q 61 6, 67 8 T 79 8 T 91 8 T 103 8 T 115 8 T 127 8 T 145 8" class="line" stroke-width="0.7"/>
+    <path d="M -10 14 Q -2 12, 6 14 T 22 14 T 38 14" class="line" stroke-width="0.55"/>
+    <path d="M 75 14 Q 83 12, 91 14 T 107 14 T 123 14 T 145 14" class="line" stroke-width="0.55"/>
+    <!-- Tiny foam dashes -->
+    <line x1="44" y1="6" x2="48" y2="6" class="line" stroke-width="0.5"/>
+    <line x1="68" y1="6" x2="72" y2="6" class="line" stroke-width="0.5"/>
+
+    <!-- Palm tree 1 (left, medium) -->
+    <g transform="translate(18,-2)">
+      <path d="M 0 0 Q -1 -14, 1 -30 Q 2 -36, 4 -40" class="thick"/>
+      <!-- ring marks on trunk -->
+      <line x1="0" y1="-10" x2="2" y2="-10" class="line" stroke-width="0.4"/>
+      <line x1="1" y1="-20" x2="3" y2="-20" class="line" stroke-width="0.4"/>
+      <line x1="1" y1="-30" x2="3" y2="-30" class="line" stroke-width="0.4"/>
+      <!-- Fronds -->
+      <path d="M 4 -40 Q -3 -47, -11 -46" class="line"/>
+      <path d="M 4 -40 Q 0 -50, -6 -54" class="line"/>
+      <path d="M 4 -40 Q 8 -52, 16 -52" class="line"/>
+      <path d="M 4 -40 Q 11 -47, 18 -44" class="line"/>
+      <path d="M 4 -40 Q 5 -47, 5 -54" class="line"/>
+      <!-- Coconuts -->
+      <circle cx="3" cy="-38" r="1.2" class="fill"/>
+      <circle cx="6" cy="-38" r="1.1" class="fill"/>
+    </g>
+
+    <!-- Palm tree 2 (center, tallest) -->
+    <g transform="translate(75,-2)">
+      <path d="M 0 0 Q 2 -18, 0 -38 Q -1 -46, 2 -54" class="thick"/>
+      <line x1="0" y1="-12" x2="2" y2="-12" class="line" stroke-width="0.4"/>
+      <line x1="1" y1="-24" x2="3" y2="-24" class="line" stroke-width="0.4"/>
+      <line x1="0" y1="-36" x2="2" y2="-36" class="line" stroke-width="0.4"/>
+      <line x1="0" y1="-46" x2="2" y2="-46" class="line" stroke-width="0.4"/>
+      <!-- Fronds -->
+      <path d="M 2 -54 Q -5 -62, -15 -61" class="line"/>
+      <path d="M 2 -54 Q -2 -65, -8 -69" class="line"/>
+      <path d="M 2 -54 Q 9 -67, 17 -65" class="line"/>
+      <path d="M 2 -54 Q 12 -62, 20 -58" class="line"/>
+      <path d="M 2 -54 Q 4 -62, 4 -70" class="line"/>
+      <path d="M 2 -54 Q -1 -60, -7 -56" class="line"/>
+      <!-- Coconuts -->
+      <circle cx="0" cy="-52" r="1.2" class="fill"/>
+      <circle cx="3" cy="-51" r="1.2" class="fill"/>
+    </g>
+
+    <!-- Palm tree 3 (right, smaller) -->
+    <g transform="translate(125,-2)">
+      <path d="M 0 0 Q -1 -11, 1 -23 Q 2 -28, 3 -32" class="thick"/>
+      <line x1="0" y1="-8" x2="2" y2="-8" class="line" stroke-width="0.4"/>
+      <line x1="1" y1="-18" x2="3" y2="-18" class="line" stroke-width="0.4"/>
+      <!-- Fronds -->
+      <path d="M 3 -32 Q -2 -40, -9 -38" class="line"/>
+      <path d="M 3 -32 Q 0 -42, -4 -46" class="line"/>
+      <path d="M 3 -32 Q 8 -42, 15 -40" class="line"/>
+      <path d="M 3 -32 Q 10 -38, 15 -36" class="line"/>
+      <path d="M 3 -32 Q 4 -38, 4 -44" class="line"/>
+      <circle cx="2" cy="-30" r="1" class="fill"/>
+    </g>
+
+    <!-- Little sun above the horizon -->
+    <g transform="translate(105,-22)">
+      <circle cx="0" cy="0" r="5" class="line" stroke-width="0.9"/>
+      <line x1="-9" y1="0"  x2="-7" y2="0"  class="line" stroke-width="0.6"/>
+      <line x1="7"  y1="0"  x2="9"  y2="0"  class="line" stroke-width="0.6"/>
+      <line x1="0"  y1="-9" x2="0"  y2="-7" class="line" stroke-width="0.6"/>
+      <line x1="-6" y1="-6" x2="-4" y2="-4" class="line" stroke-width="0.6"/>
+      <line x1="6"  y1="-6" x2="4"  y2="-4" class="line" stroke-width="0.6"/>
+    </g>
+  </g>
+
+  <!-- Bike tire #2 (bottom-right, smaller) -->
+  <g transform="translate(265,265)" opacity="0.15">
+    <circle cx="0" cy="0" r="14" class="thick"/>
+    <circle cx="0" cy="0" r="11" class="line"/>
+    <circle cx="0" cy="0" r="1.6" class="fill"/>
+    <line x1="-13" y1="0"  x2="13"  y2="0"   class="line" stroke-width="0.5"/>
+    <line x1="0"   y1="-13" x2="0"  y2="13"  class="line" stroke-width="0.5"/>
+    <line x1="-9"  y1="-9"  x2="9"  y2="9"   class="line" stroke-width="0.4"/>
+    <line x1="-9"  y1="9"   x2="9"  y2="-9"  class="line" stroke-width="0.4"/>
+  </g>
+
+  <!-- Stylized goalpost / H (bottom-left) -->
+  <g transform="translate(50,275)" opacity="0.14">
+    <line x1="0" y1="-25" x2="0" y2="25" class="line"/>
+    <line x1="22" y1="-25" x2="22" y2="25" class="line"/>
+    <line x1="-2" y1="0" x2="24" y2="0" class="line"/>
+  </g>
+</svg>

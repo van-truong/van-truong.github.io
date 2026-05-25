@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" fill="none">
+  <title>Traveler Fedora</title>
+  <!-- Brim back layer -->
+  <ellipse cx="130" cy="128" rx="125" ry="18" fill="#7a5a30"/>
+  <!-- Brim front layer (slight upturn) -->
+  <path d="M 5 128 Q 130 144, 255 128 Q 250 116, 130 120 Q 10 116, 5 128 Z" fill="#9a7848"/>
+
+  <!-- Crown -->
+  <path d="M 72 124 Q 65 58, 130 50 Q 195 58, 188 124 Z" fill="#ab8a55"/>
+
+  <!-- Pinch / crease in crown -->
+  <path d="M 105 70 Q 130 65, 155 70 Q 150 82, 130 80 Q 110 82, 105 70 Z" fill="#7a5a30" opacity="0.35"/>
+  <path d="M 130 60 Q 128 90, 130 110" stroke="#7a5a30" stroke-width="1.5" opacity="0.4" fill="none"/>
+
+  <!-- Hat band -->
+  <path d="M 74 112 Q 130 126, 186 112 L 184 122 Q 130 134, 76 122 Z" fill="#3a2812"/>
+
+  <!-- Small feather tucked in band -->
+  <g transform="translate(170, 90)">
+    <path d="M 0 0 Q 14 -8, 24 -2 Q 20 6, 6 8 Q 4 4, 0 0 Z" fill="#c4863a"/>
+    <line x1="0" y1="0" x2="22" y2="-2" stroke="#7a5a30" stroke-width="0.6"/>
+    <line x1="4" y1="3" x2="20" y2="0" stroke="#7a5a30" stroke-width="0.5"/>
+  </g>
+
+  <!-- Stitch along brim edge -->
+  <path d="M 14 132 Q 130 145, 246 132" stroke="#5a4020" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.5" fill="none"/>
+</svg>

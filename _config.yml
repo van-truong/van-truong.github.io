@@ -1,0 +1,48 @@
+# ════════════════════════════════════════════════════════════════════
+# Jekyll config for van-truong.github.io
+#
+# The main site (index.html, app.js, styles.css, hats/, bg/) is pure
+# static and passes through Jekyll untouched. Jekyll only processes
+# files that start with --- frontmatter (blog posts + blog.html).
+# ════════════════════════════════════════════════════════════════════
+
+title: Van Quynh Thi Truong
+description: >-
+  Personal site of Van Quynh Thi Truong — AI technologist, artist, traveler.
+  Many hats, click one.
+author: Van Quynh Thi Truong
+email: scientistvan@gmail.com
+url: "https://van-truong.github.io"
+
+# Clean blog URLs: /blog/YYYY/MM/DD/slug/
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+# GitHub Pages auto-loads these. jekyll-feed generates /feed.xml,
+# which the Traveler page's "latest posts" widget reads.
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Default frontmatter applied to all posts
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+# Excluded from the build output
+exclude:
+  - README.md
+  - .claude
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+
+# Posts listing config
+paginate: 10

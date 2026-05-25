@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Van Quynh Thi Truong — computational scientist & artist</title>
+  <meta name="description" content="Van Quynh Thi Truong wears many hats: computational scientist, artist, mentor, outdoors enthusiast. Click a hat to learn more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Caveat:wght@500;700&family=Outfit:wght@400;600;700&family=Oswald:wght@400;600;700&family=Playfair+Display:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body data-theme="home">
+
+  <main class="page">
+
+    <header class="hero">
+      <div class="nav-block">
+        <h2 class="nav-title">THE HATS I WEAR <span class="wink">;-)</span></h2>
+        <p class="nav-invite">Click for the cool stuff I've done!</p>
+        <nav class="hat-dock" id="hat-dock" aria-label="Choose a hat">
+          <!-- hat buttons rendered by app.js -->
+        </nav>
+      </div>
+
+      <div class="portrait" id="portrait">
+        <div class="portrait-frame">
+          <img src="headshot.jpg" alt="Van Quynh Thi Truong" class="headshot">
+          <div class="hat-slot" id="hat-slot" aria-hidden="true"></div>
+          <div class="accessory-slot" id="accessory-slot" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="name">Van Quynh Thi Truong</h1>
+      </div>
+    </header>
+
+    <!-- ── HOME (default, no hat) ────────────────────────────────────── -->
+    <section class="content" id="content-home" data-section="home">
+      <div class="intro">
+        <p class="lede">Hi, I'm Van — an AI technologist and data scientist super stoked about multi-agent AI systems, and a self-taught artist on the side. Born in rural Vietnam, raised in Florida, currently in Cape Town for an AI residency.</p>
+        <p>I've spent the past decade across academia, government, and industry — and outside of that I surf, rock climb, mountain bike, make crowdsourced sculptures, illustrate science, and once biked across the country. This site collects all of it, sorted by whichever hat I'm wearing.</p>
+        <p class="prompt">→ Pick a hat above to see what's underneath.</p>
+      </div>
+
+      <div class="contact-block">
+        <p class="contact-label">Reach me</p>
+        <a class="contact-link" href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a>
+        <p class="contact-secondary">
+          <a href="https://linkedin.com/in/vanqtruong" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="https://scholar.google.com/citations?hl=en&user=SDMqHnAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── SCIENTIST (PhD cap) ───────────────────────────────────────── -->
+    <section class="content" id="content-scientist" data-section="scientist" hidden>
+      <div class="section-header">
+        <h2>computational scientist</h2>
+        <p class="section-lede">Mission-driven AI technologist and data scientist working on multi-agent AI systems, biomedical informatics, and global tech policy — across academia, government, and industry.</p>
+      </div>
+
+      <article class="card research-focus-card">
+        <h3>Research focus</h3>
+        <ul class="plain">
+          <li>Multi-agent AI safety</li>
+          <li>How autonomous multi-agent systems could destabilize critical digital infrastructure</li>
+          <li>LLM agents, RAG, tool-calling</li>
+          <li>Prompt-injection security</li>
+          <li>Technology &amp; society</li>
+          <li>Global power dynamics: tech capacity &amp; multinational partnerships</li>
+          <li>Entrepreneurship ecosystems</li>
+          <li>Knowledge graphs for biological AI models</li>
+          <li>Bioinformatics infrastructure &amp; policy</li>
+        </ul>
+      </article>
+
+      <h3 class="subhead">Education &amp; training</h3>
+      <p class="subhead-lede">Where I learned (and from whom).</p>
+      <div class="edu-section">
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="edu-degree">PhD</div>
+            <div class="edu-field">Computational Biology</div>
+            <div class="edu-school">Penn Perelman School of Medicine</div>
+            <div class="edu-location">Philadelphia, PA</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">Cert.</div>
+            <div class="edu-field">Advanced Scientific Computing</div>
+            <div class="edu-school">Penn School of Engineering &amp; Applied Science</div>
+            <div class="edu-location">Philadelphia, PA</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">MA</div>
+            <div class="edu-field">Statistics &amp; Data Science</div>
+            <div class="edu-school">Penn Wharton School of Business</div>
+            <div class="edu-location">Philadelphia, PA</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">MS</div>
+            <div class="edu-field">Biotechnology</div>
+            <div class="edu-school">Johns Hopkins University</div>
+            <div class="edu-location">Baltimore, MD</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">Fellow</div>
+            <div class="edu-field">Computational Cognitive Sciences</div>
+            <div class="edu-school">Harvard University, Center for Brain Science</div>
+            <div class="edu-location">Cambridge, MA</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">Scholar</div>
+            <div class="edu-field">Computational Epidemiology</div>
+            <div class="edu-school">Virginia Tech Biocomplexity Institute</div>
+            <div class="edu-location">Arlington, VA</div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-degree">BA</div>
+            <div class="edu-field">Anthropology</div>
+            <div class="edu-school">University of Florida</div>
+            <div class="edu-location">Gainesville, FL</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Service &amp; leadership</h3>
+      <ul class="plain bigger service-list">
+        <li>Organizing Committee — Trustworthy AI4GOOD Workshop, <strong>ICML 2026</strong></li>
+        <li>Organizing Committee — <strong>BOSC</strong> Bioinformatics Open Source Conf., 2026</li>
+        <li>Speakers Chair — <strong>WHPC Workshop</strong>, SC25 Supercomputing Conference</li>
+        <li>Organizing Committee — London Geometry &amp; ML Summer School (2024)</li>
+        <li>Communications Chair — <strong>NeurIPS ML4H</strong> Symposium (2023)</li>
+        <li>Scientific Reviewer — PSB, ML4H, AIM-AHEAD ScHARe, BOSC 2025, BOSC 2026, AI4GOOD@ICML 2026 Workshop, NeurIPS 2026</li>
+        <li>Sponsorship Chair — Women in Bio (DC/MD/VA), raised $20k+/yr</li>
+      </ul>
+
+      <!-- Experience section commented out per request — uncomment to restore.
+      <h3 class="subhead">Experience</h3>
+      <div class="timeline experience">
+        <div class="timeline-entry">
+          <div class="year">2020–26</div>
+          <div class="entry-body">
+            <h3>Microsoft Research &amp; ACM SIGHPC PhD Fellow</h3>
+            <p class="meta">Institute for Biomedical Informatics, Penn</p>
+            <p>Led development of <strong>ToolsyBio</strong>, a RAG system enabling natural-language search across 30,000+ bioinformatics tools. Designed A/B tests across 100+ tool-enabled LLMs via API. Applied HPC and engineering practices to prototype on vector and graph databases.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2024–now</div>
+          <div class="entry-body">
+            <h3>Research Scientist</h3>
+            <p class="meta">NIH AIM-AHEAD Consortium</p>
+            <p>Designed AI/ML models analyzing EHR data from 22.8M+ patients for COVID-19 disparities and comorbidity insights. Applied OMOP CDM with Apache Spark SQL in Palantir Foundry. Initiated discussions on social determinants of health.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2023–24</div>
+          <div class="entry-body">
+            <h3>Principal Investigator</h3>
+            <p class="meta">Penn Global &amp; Perry World House</p>
+            <p>Secured competitive funding to independently design and execute a mixed-methods study on AI adoption in an LMIC context (Vietnam). Studied policy and curriculum changes as Vietnam transitions to a knowledge-based economy.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2023</div>
+          <div class="entry-body">
+            <h3>Computational R&amp;D Scientist (Intern)</h3>
+            <p class="meta">Eli Lilly and Company</p>
+            <p>Created a modular pipeline roadmap for high-throughput single-cell imaging analysis. Identified infrastructure bottlenecks across national corporate data servers.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2018–20</div>
+          <div class="entry-body">
+            <h3>Biotechnology Fellow</h3>
+            <p class="meta">NIH National Cancer Institute</p>
+            <p>Designed high-throughput drug-screening workflows. Co-led a hands-on cancer biology workshop at the National Library of Medicine for 20+ NIH scientists and high school students.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2018</div>
+          <div class="entry-body">
+            <h3>Project Manager &amp; Visiting Fellow</h3>
+            <p class="meta">Harvard Center for Brain Science</p>
+            <p>Managed an fMRI study on uncertainty-guided decision-making (30+ participants). Secured fellowship support from the Irene and Eric Simon Brain Research Foundation.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2017–18</div>
+          <div class="entry-body">
+            <h3>Project Manager &amp; Research Scholar</h3>
+            <p class="meta">Virginia Tech Biocomplexity Institute</p>
+            <p>Assembled a multidisciplinary team that secured a SEAD grant to build a VR data-visualization studio. Co-created a bomb-detonation simulation studying disaster-response decision-making for federal defense stakeholders.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2014–17</div>
+          <div class="entry-body">
+            <h3>Materials Consultant</h3>
+            <p class="meta">UF Software Analysis &amp; Advanced Materials Processing Center</p>
+            <p>Solved time-sensitive analytics problems for Intel, Varian, IBM GlobalFoundries, and Applied Materials. Taught a pilot fusion science-humanities course later picked up by the Ontario Science Centre.</p>
+          </div>
+        </div>
+      </div>
+      -->
+
+      <h3 class="subhead">Publications</h3>
+      <p class="subhead-lede">Full list also on <a href="https://scholar.google.com/citations?hl=en&user=SDMqHnAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2026</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">Dissertation</span> <strong>Truong</strong>, V.Q. <em>Artificial intelligence strategies for advancing global bioinformatics infrastructure and ecosystem.</em> Ph.D. dissertation, Perelman School of Medicine, Penn, 2026.</li>
+          <li><span class="pub-tag">1st author</span> <strong>Truong</strong> &amp; Ritchie. Eras of bioinformatics technologies from command-line to AI chatbots. <em>Briefings in Bioinformatics</em>, 2026 (in press).</li>
+          <li><span class="pub-tag">1st author</span> <strong>Truong</strong> &amp; Ritchie. Prompt injection of OpenAI custom GPTs leaks informatics secrets. <em>AMIA 2026</em>, in press.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2025</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">Masters Thesis</span> <strong>Truong</strong> &amp; Dobriban. <em>A statistical exploration of large language models: Evolution, challenges, and global concerns.</em> Wharton, 2025.</li>
+          <li><span class="pub-tag">1st author</span> <strong>Truong</strong>, Yang, Shen, Ritchie. A comprehensive benchmark of tool-augmented LLMs for biomedical knowledge retrieval and integration. <em>IEEE-BIBM 2025</em>.</li>
+          <li><span class="pub-tag">1st author</span> <strong>Truong</strong> &amp; Ritchie. ToolsyBio: A retrieval-augmented generation system for navigating the bioinformatics software landscape. <em>USRSE'25</em>, Philadelphia, PA.</li>
+          <li><span class="pub-tag">4th author</span> Peyton, Chung, Mohanty, <strong>Truong</strong>, et al. A blueprint for open science: how transatlantic teams built and deployed knowledge graphs to enable biological (AI) models. <em>BioHackrXiv Preprint Server</em>, 2025.</li>
+          <li><span class="pub-tag">Co-author</span> Huang, Cohen, <strong>Truong</strong>, et al. Reference-free cell-type annotation with LLM agents. <em>ICLR Workshop on Machine Learning for Genomics Explorations</em>, 2025.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2024</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">Co-1st Author</span> Deb, Kalra, Kubica, Stricker, <strong>Truong</strong>, Zeng, et al. The fifth international hackathon for developing computational cloud-based tools and resources for pan-structural variation and genomics. <em>F1000Research</em>, 2024.</li>
+          <li><span class="pub-tag">Co-author</span> Kim, Ionita, Lee, McKeague, Pattekar, Painter, Wagenaar, <strong>Truong</strong>, et al. Cytometry masked autoencoder: an accurate and interpretable automated immunophenotyper. <em>Cell Reports Medicine</em>, 2024.</li>
+          <li><span class="pub-tag">2nd author</span> Romano, <strong>Truong</strong>, Kumar, Venkatesan, et al. The Alzheimer's Knowledge Base — A knowledge graph for therapeutic discovery in Alzheimer's Disease research. <em>Journal of Medical Internet Research</em>, 2024.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2023</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">1st author</span> <strong>Truong</strong>, Lee, Kim, Wherry, Ritchie. Immunology meets artificial intelligence: expanding our scientific toolbox. <em>NeurIPS AI4Science Workshop</em>, 2023.</li>
+          <li><span class="pub-tag">Co-1st Author</span> Kubica, Kumar, Tan, <strong>Truong</strong>, Enoma, Cooley, et al. The fourth annual Carnegie Mellon Libraries hackathon for biomedical data management, knowledge graphs, and deep learning. <em>BioHackrXiv Preprint Server</em>, 2023.</li>
+          <li><span class="pub-tag">Co-author</span> Kim, Ionita, Lee, McKeague, Pattekar, Painter, Wagenaar, <strong>Truong</strong>, et al. Single-cell masked autoencoder: an accurate and interpretable automated immunophenotyper. <em>NeurIPS AI4Science Workshop</em>, 2023.</li>
+          <li><span class="pub-tag">Organizing Cmte</span> Hegselmann, Parziale, Shanmugam, …, <strong>Truong</strong>, …, Hartvigsen. Proceedings of the 3rd Machine Learning for Health Symposium. <em>PMLR 225:1–12</em>, 2023.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2022</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">Co-1st Author</span> <strong>Truong</strong>, Woerner, Cherlin, Bradford, Lucas, et al. Quality control procedures for genome-wide association studies. <em>Current Protocols Hum Genet</em>, 2022.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2021</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">Co-1st Author</span> Moore, <strong>Truong</strong>, Robbins, Nicholson, Williams-Devane. Ten important roles for academic leaders to promote equity, diversity, and inclusion in data science. <em>BioData Mining</em>, 2021.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2020</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">2nd author</span> Tomov, <strong>Truong</strong>, Hundia, Gershman. Dissociable neural correlates of uncertainty underlie different exploration strategies. <em>Nature Communications</em>, 2020.</li>
+          <li><span class="pub-tag">Co-author</span> Goodwin, Croft, Futch, …, <strong>Truong</strong>, …, Cruz, Golde. Utilizing minimally purified secreted rAAV for rapid and cost-effective manipulation of gene expression in the CNS. <em>BMC Molecular Neurodegeneration</em>, 2020.</li>
+          <li><span class="pub-tag">Trade</span> <strong>Truong</strong>. Beyond Zoom: virtual gathering spaces for the holidays and beyond. <em>ExtremeTech Magazine</em>, 2020.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2017</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">Co-author</span> Futch, Croft, <strong>Truong</strong>, Krause, Golde. Targeting psychological stress signaling pathways in Alzheimer's disease. <em>BMC Molecular Neurodegeneration</em>, 2017.</li>
+          <li><span class="pub-tag">Co-author</span> Brewer, Xin, Hatem, Diercks, <strong>Truong</strong>, Jones. Lateral Ge diffusion during oxidation of Si/SiGe fins. <em>Nano Letters</em>, 2017.</li>
+        </ul>
+      </div>
+
+      <div class="pubs-year">
+        <h4 class="pubs-year-heading">2016</h4>
+        <ul class="plain bigger pubs">
+          <li><span class="pub-tag">Co-author</span> Lind, Martin, Sorg, Kennon, <strong>Truong</strong>, Aldridge, Hatem, Thompson, Jones. Activation of Si implants into InAs characterized by Raman scattering. <em>Journal of Applied Physics</em>, 2016.</li>
+        </ul>
+      </div>
+
+      <div class="feature awards-feature">
+        <p class="feature-label">Recognition</p>
+        <h4 class="feature-title">Selected awards &amp; funding</h4>
+        <p class="award-total">~$850k career total</p>
+        <div class="award-list">
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/cooperative-ai.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>Cooperative AI Research Fellowship</strong><span class="award-meta">12 of 1,100+ globally · 2026</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/gutmann.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>President Amy Gutmann Leadership Award</strong><span class="award-meta">2025</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/microsoft-research.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>Microsoft Research PhD Fellowship</strong><span class="award-meta">1 of 36 globally · 2022–25</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/sighpc.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>ACM SIGHPC Computational &amp; Data Science Fellowship</strong><span class="award-meta">1 of 6 globally · 2023–25</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/aim-ahead.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>NIH AIM-AHEAD &amp; NCATS Data Analytics Training Grant</strong><span class="award-meta">1 of 50 · 2024</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/penn-global.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>Inaugural Penn Global Dissertation Grant</strong><span class="award-meta">1 of 11 · 2024</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/fulbright.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>Fulbright U.S. Open Study/Research Award</strong><span class="award-meta">Semifinalist · 2024</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/leadership-engagement.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>Inaugural Leadership &amp; Engagement Award</strong><span class="award-meta">1 of 3 · 2023</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/women-in-bio.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>Women in Bio National Impact Scholarship</strong><span class="award-meta">1 of 6 nationwide · 2019</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/nih-jhu.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>NIH-NCI &amp; Johns Hopkins Biotechnology Fellowship</strong><span class="award-meta">1 of 3 · 2018</span></div>
+          </div>
+          <div class="award-row">
+            <figure class="polaroid polaroid-sm"><div class="polaroid-img"><img src="awards/mcquown.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+            <div class="award-text"><strong>O. Ruth McQuown Women's Leadership Award</strong><span class="award-meta">1 of 7 · 2017</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top: 3rem;">
+        <!-- Technical skills card commented out per request — uncomment to restore.
+        <article class="card">
+          <h3>Technical skills</h3>
+          <ul class="plain">
+            <li><strong>AI</strong> — LLM prototyping (RAG, tool-calling, multimodal retrieval, agents), MCP servers, model eval, causal inference, TensorFlow, PyTorch</li>
+            <li><strong>Engineering</strong> — clean code, testing, Git, Docker, APIs, relational/vector/graph/knowledge databases</li>
+            <li><strong>Data</strong> — Python, R, SQL, Palantir Foundry, Databricks, Apache Spark, HPC &amp; cluster computing</li>
+            <li><strong>Qualitative</strong> — ethnography, in-depth interviews, focus groups, thematic analysis</li>
+          </ul>
+        </article>
+        -->
+
+        <article class="card">
+          <h3>Mentorship</h3>
+          <p>20+ students mentored across high school, undergrad, post-bac, and graduate levels — the majority from communities underrepresented in STEM. Outcomes include first-generation college graduates, PhD admits at Penn / Harvard / Rockefeller, medical-school placements, and industry roles at companies like Procter &amp; Gamble and Emergent BioSolutions.</p>
+        </article>
+
+        <article class="card">
+          <h3>Policy &amp; public engagement</h3>
+          <ul class="plain">
+            <li>Co-led op-ed on equity, diversity &amp; inclusion in data science (<em>BioData Mining</em>)</li>
+            <li>Policy briefs on internet equity, broadband access, and emerging-tech governance</li>
+            <li>Public art installations engaging hundreds at TEDxUF, NYAS × Guerilla Science, NLM, D.C. CivicFest</li>
+            <li>Commissioned scientific illustrations for peer-reviewed journals, a textbook, and a U.S. patent</li>
+            <li>Pro bono technical and grant-writing support for small community organizations</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── ARTIST (beret) ────────────────────────────────────────────── -->
+    <section class="content" id="content-artist" data-section="artist" hidden>
+      <div class="section-header">
+        <h2>mixed media creative</h2>
+        <p class="section-lede">As a child, art was how I made sense of the world while my family immigrated to the US. In college I started writing science notes in the format of famous paintings — and never stopped bringing art and science into public places via crowdsourced sculptures.</p>
+      </div>
+
+      <div class="subsection">
+        <h3 class="subhead">In the press</h3>
+        <p class="subhead-lede">The whiteboard paintings and rubber-band Mona Lisa got picked up a few places.</p>
+        <ul class="plain bigger">
+          <li><strong>USA Today</strong> — “Art meets science: Florida student's creation catching campus' eye” (whiteboard art)</li>
+          <li><strong>HuffPost</strong> — “One Florida Student Turned Studying Into Art” (whiteboard art)</li>
+          <li><strong>The Gainesville Sun</strong> — “Thinking in the Arts and Sciences StudioLab Exhibit” (saltwater intrusion piece) &amp; “UF students' community projects gain financial support” (rubber band sculpture)</li>
+          <li><strong>The Daytona Beach News-Journal</strong> — “A holiday from books, but not from boredom” (seaweed Mona Lisa)</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-entry">
+          <div class="year">2024</div>
+          <div class="entry-body">
+            <h3>Dear A.I., Please Help Me Fill In My Childhood Memories</h3>
+            <p>Textile painterly relief piece woven with plastic grocery bags, inspired by the reed mats of my village. Made partly with AI assistance. Addresses cultural preservation amid urbanization and technology.</p>
+            <p class="meta">Resource Exchange · Dec 2024 – Feb 2025</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2019</div>
+          <div class="entry-body">
+            <h3>Three interactive science exhibits</h3>
+            <ul class="plain">
+              <li>NIH/NCI workshop with Dr. Chanelle Case-Borden — participants built "surgical tools" to dissect cells. Exhibited at the National Library of Medicine.</li>
+              <li>NYC Photoville multisensory tasting exhibit with NY Academy of Sciences and Guerilla Science.</li>
+              <li>D.C. CivicFest — solving science trivia through drawing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2018</div>
+          <div class="entry-body">
+            <h3>VR disaster response simulation</h3>
+            <p>Virginia Tech SEAD grant project. Participants explore decision-making in post-bomb-detonation D.C.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2017</div>
+          <div class="entry-body">
+            <h3>TEDxUF connect-the-dots alligator</h3>
+            <p>1,200+ participants connected numbered dots on an 8' × 8' collaborative canvas.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2016</div>
+          <div class="entry-body">
+            <h3>What Makes You..?</h3>
+            <p>A 7' × 8' wooden interactive data-viz survey with keyword nodes. Plus a saltwater intrusion sculpture exhibited at UF Fine Arts College.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2015</div>
+          <div class="entry-body">
+            <h3>Mona Lisa, in rubber bands</h3>
+            <p>A 6' × 8' canvas filled in by passers-by — 14,000 rubber bands over two weeks at National Arts and Humanities Month.</p>
+            <p>Same year: <em>DNA Gator</em>, a 6' × 8' piece where participants filled in genetic sequences (A, T, C, G). Also curated an outdoor tree gallery.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2014–16</div>
+          <div class="entry-body">
+            <h3>Science lecture-note paintings</h3>
+            <p>Whiteboard recreations of <em>Starry Night</em>, Van Gogh's <em>Self-Portrait</em>, and Munch's <em>The Scream</em>, using biology, chemistry, and physics course notes. Displayed in UF libraries and museum events.</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="year">2013</div>
+          <div class="entry-body">
+            <h3>3-D paintings at IB Exhibition</h3>
+            <p>Bethune Cookman University.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="subsection">
+        <h3 class="subhead">Sci-Art — scientific illustration</h3>
+        <p class="subhead-lede">I started a scientific illustration business as an undergrad — partly to explore research, partly to offset college costs as a first-gen student.</p>
+        <ul class="plain bigger">
+          <li><strong>Chameleon Biosciences</strong> — proprietary scientific illustrations (2020)</li>
+          <li><strong>NIH National Cancer Institute</strong> — symposium poster commissioned by Dr. Giorgio Trinchieri, Chief of the Laboratory of Integrative Cancer Immunology, for the <em>Cancer and Inflammation: From Micro to Macro</em> Symposium (2019)</li>
+          <li><strong>Veterinary orthopedics textbook</strong> — figures 4.1, 4.2, 4.4, 4.6, 4.9, 4.10 in Biedrzycki, <em>Locking Plates in Veterinary Orthopedics</em> (Wiley, 2018)</li>
+          <li><strong>Neuroregenerative nutrition</strong> — Steindler &amp; Reynolds, <em>Advances in Nutrition</em> (2017)</li>
+          <li><strong>Tissue-engineered peripheral nerve interfaces</strong> — Spearman et al., <em>Advanced Functional Materials</em> (2017)</li>
+          <li><strong>Alzheimer's stress-signaling research</strong> — Futch, Croft, Truong et al., <em>Molecular Neurodegeneration</em> (2017)</li>
+          <li><strong>Mosquito sculptures</strong> — functional 3D models of <em>Aedes aegypti</em> for press interviews, commissioned by Dr. Brad Willenberg (UCF)</li>
+          <li><strong>Patent illustrations</strong> — US Patent #9,258,988 B2 (2016)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── SPORTY (baseball cap) ─── sports + outdoors merged ─────────── -->
+    <section class="content" id="content-sporty" data-section="sporty" hidden>
+      <div class="section-header">
+        <h2>multi-sport athlete</h2>
+        <p class="section-lede">Team sports run the social side of my life. The rest of it happens outside — climbing, surfing, mountain biking, and once, biking across a continent.</p>
+      </div>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Bike touring</h3>
+        <div class="feature">
+          <p class="feature-label">Summer 2014</p>
+          <h4 class="feature-title">5,000 miles across the U.S., solo, at 19</h4>
+          <div class="stat-row">
+            <div class="stat"><div class="stat-num">5,000</div><div class="stat-label">miles</div></div>
+            <div class="stat"><div class="stat-num">89</div><div class="stat-label">days</div></div>
+            <div class="stat"><div class="stat-num">13</div><div class="stat-label">states</div></div>
+            <div class="stat"><div class="stat-num">$2k+</div><div class="stat-label">raised</div></div>
+          </div>
+          <p>Seattle → Florida (arrived in time for my mom's birthday). Biking, camping, occasional hitchhiking. Fundraised for the Alexander Hamilton Scholars Program — which had selected me as 1 of 35 scholars from a national pool two years earlier.</p>
+          <p class="meta">Route: WA · OR · ID · MT · WY · CO · KS · MO · IL · KY · TN · MS · AL · FL</p>
+          <p class="meta">More photos &amp; stories: <a href="https://facebook.com/vanonabike" target="_blank" rel="noopener">facebook.com/vanonabike</a></p>
+        </div>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/bike-touring-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/bike-touring-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/bike-touring-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/bike-touring-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/bike-touring-5.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Mountain biking</h3>
+        <p class="sport-blurb">Mostly local trails, mostly downhill. Recipient of the <strong>Andrea Gonzalez (AG) FTWNB Memorial Scholarship</strong> at the Radical Adventure Riders NE Area Retreat (Aug 2025).</p>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/mountain-biking-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/mountain-biking-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/mountain-biking-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/mountain-biking-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Surfing</h3>
+        <p class="sport-blurb">Founded the <strong>Penn Grad Surf Club</strong> in 2025 as President &amp; Founder. Surf whenever I'm near saltwater — Philly day-trips, Cape Town breaks, the Vietnamese coast.</p>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/surfing-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/surfing-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/surfing-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/surfing-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Ultimate frisbee</h3>
+        <p class="sport-blurb"><strong>Penn Women's</strong> — USA Nationals (2021). <strong>Craft Women's Team</strong> — South African Nationals (2026). Played through a shoulder injury from a car-bike accident.</p>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/ultimate-frisbee-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/ultimate-frisbee-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/ultimate-frisbee-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/ultimate-frisbee-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Touch rugby</h3>
+        <p class="sport-blurb"><strong>Wharton Women's Rugby</strong> — Co-Captain &amp; Exec Board since Aug 2025. Showed up to a try-out, never left.</p>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/touch-rugby-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/touch-rugby-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/touch-rugby-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/touch-rugby-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Rock climbing</h3>
+        <p class="sport-blurb">Indoor when the weather's bad, outdoor when it's not.</p>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/rock-climbing-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/rock-climbing-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/rock-climbing-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/rock-climbing-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Foraging</h3>
+        <p class="sport-blurb">Mushrooms, berries, herbs — whatever the season offers.</p>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/foraging-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/foraging-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/foraging-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/foraging-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="sport-section">
+        <h3 class="sport-heading">Backpacking</h3>
+        <p class="sport-blurb">Long weekends and longer.</p>
+        <div class="polaroid-collage">
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/backpacking-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/backpacking-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/backpacking-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+          <figure class="polaroid"><div class="polaroid-img"><img src="sports/backpacking-4.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption></figcaption></figure>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- ── TRAVELER (cowboy hat) ─────────────────────────────────────── -->
+    <section class="content" id="content-traveler" data-section="traveler" hidden>
+      <div class="section-header">
+        <h2>stories from the road</h2>
+        <p class="section-lede">Places I've been (and a few I'm headed to). Travel essays might land here eventually — TBD.</p>
+      </div>
+
+      <div class="travel-map-wrap">
+        <div id="travel-map"></div>
+        <noscript>
+          <p class="travel-map-fallback">The map needs JavaScript. The timeline below has the full list.</p>
+        </noscript>
+      </div>
+
+      <div id="travel-log" class="travel-log">
+        <p class="travel-loading">Loading the timeline…</p>
+      </div>
+    </section>
+
+    <!-- ── CHRONICALLY ONLINE (smartphone) ────────────────────────────── -->
+    <section class="content" id="content-online" data-section="online" hidden>
+      <div class="section-header">
+        <h2>currently scrolling</h2>
+        <p class="section-lede">My corner of the internet — vlogs, blog posts, threads, and whatever else I'm publishing. Stuff lands here as I post it.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>YouTube</h3>
+          <p><a href="https://www.youtube.com/@vansjoyfactory" target="_blank" rel="noopener">@vansjoyfactory</a> — interviews and footage from the field, plus more on the way.</p>
+        </article>
+
+        <article class="card">
+          <h3>LinkedIn</h3>
+          <p><a href="https://linkedin.com/in/vanqtruong" target="_blank" rel="noopener">@vanqtruong</a> — research, work, and the occasional long-form post.</p>
+        </article>
+
+        <article class="card">
+          <h3>Google Scholar</h3>
+          <p><a href="https://scholar.google.com/citations?hl=en&user=SDMqHnAAAAAJ" target="_blank" rel="noopener">Full publications list</a> — everything peer-reviewed.</p>
+        </article>
+
+        <article class="card highlight">
+          <h3>Blog (coming home soon)</h3>
+          <p>I'm pulling my blog and vlog content under this tab. For now, posts live at <a href="blog.html">/blog</a> and YouTube content is featured on the Traveler page — that'll all consolidate here.</p>
+        </article>
+      </div>
+
+      <h3 class="subhead" style="margin-top: 2.5rem;">Upcoming topics</h3>
+      <p class="subhead-lede">Things I'm writing about (or want to write about) soon.</p>
+      <ul class="plain bigger">
+        <li><strong>AI in Vietnam</strong> — three-month fieldwork (Penn Global Dissertation Grant) interviewing Vietnamese perspectives on AI.</li>
+        <li><strong>AI for oral history</strong> — preserving a 400-year-old village on Vietnam's central coast.</li>
+        <li><strong>AI4Immuno</strong> — educational resource on AI's impact on immunology.</li>
+        <li><strong>AI digital divide op-ed</strong> — Perry World House Graduate Associates Program.</li>
+      </ul>
+
+      <div class="placeholder-note">
+        <p>📱 More content modules landing here — feed integrations, a notes section, replies to inbound. Soon.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© Van Quynh Thi Truong · <a href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a></p>
+    <p class="footer-meta">Built with hats.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="travel.js" defer></script>
+</body>
+</html>
