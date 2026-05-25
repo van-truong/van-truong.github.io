@@ -119,6 +119,24 @@ body[data-theme="traveler"] {
   --heading-font: 'Oswald', 'Inter', sans-serif;
 }
 
+/* ── RUGGED theme (backpacking + foraging) ─────────────────────────── */
+body[data-theme="rugged"] {
+  --bg:         #eef3ec;
+  --bg-image:
+    url('bg/outdoor.svg'),
+    radial-gradient(ellipse at 15% 0%, rgba(56, 102, 65, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 100%, rgba(192, 57, 74, 0.10) 0%, transparent 50%);
+  --bg-size:   400px 400px, auto, auto;
+  --bg-repeat: repeat, no-repeat, no-repeat;
+  --text:       #1f3a2a;
+  --muted:      #5a7060;
+  --accent:     #386641;
+  --accent-dim: #b7d4bd;
+  --card-bg:    rgba(255, 255, 255, 0.72);
+  --card-border: rgba(31, 58, 42, 0.10);
+  --heading-font: 'Oswald', 'Inter', sans-serif;
+}
+
 /* ── CHRONICALLY ONLINE theme ─────────────────────────────────────── */
 body[data-theme="online"] {
   --bg:         #fefcf6;
@@ -434,16 +452,16 @@ body[data-theme="online"] {
   grid-row: 1 / span 3;
   align-self: center;
   justify-self: start;
-  min-width: 3rem;
+  min-width: 3.75rem;
   text-align: center;
   display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   background: var(--accent-dim);
   color: var(--text);
-  padding: 0.22rem 0.6rem;
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
   line-height: 1.1;
   white-space: nowrap;
@@ -571,6 +589,31 @@ body[data-theme="online"] {
   margin-right: 0.55rem;
   vertical-align: 1px;
   white-space: nowrap;
+}
+.pub-note {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  font-style: italic;
+  margin-left: 0.3rem;
+}
+
+/* Cursive "Vân = clouds" caption on the home intro */
+.van-cloud {
+  font-family: 'Caveat', cursive;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  color: var(--accent);
+  margin: 0.1rem 0 1.1rem;
+  letter-spacing: 0.01em;
+}
+.van-cloud-glyph {
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: #6b8bb5;
+  font-size: 1.15rem;
+  vertical-align: 2px;
 }
 
 /* Placeholder note (e.g. traveler blog "coming soon") */
@@ -1162,6 +1205,165 @@ body.reading .page {
   .polaroid { width: calc(50% - 0.7rem); max-width: 170px; }
   .polaroid-collage { gap: 1.2rem 0.8rem; justify-content: center; }
   .sport-section { margin-bottom: 2.5rem; padding-top: 1.5rem; }
+}
+
+/* Graphic-design polaroid captions: title on top, year below */
+.design-collage figcaption .design-year {
+  display: block;
+  font-size: 0.85em;
+  opacity: 0.65;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* Rugged-page trip subsections (Backpacking trip-by-trip) */
+.trip {
+  margin: 1.75rem 0 1.25rem;
+}
+.trip-heading {
+  font-family: var(--heading-font);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+.trip-heading .trip-meta {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-family: var(--body-font);
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.7;
+}
+.trip .polaroid-collage {
+  padding: 0.75rem 0.25rem 1rem;
+}
+
+/* ── All-time fave trips (Traveler page) ──────────────────────────── */
+.fave-trips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.fave-trip {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.fave-trip-photo {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--accent-dim) 0%, rgba(255,255,255,0.3) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.fave-trip-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fave-trip-body {
+  padding: 0.9rem 1rem 1.1rem;
+}
+.fave-trip-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+  font-family: var(--heading-font);
+}
+.fave-trip-meta {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+.fave-trip-highlights {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.fave-trip-highlights li { margin-bottom: 0.25rem; }
+
+/* ── Lightbox ───────────────────────────────────────────────────────── */
+.polaroid img,
+.lightbox-img { cursor: zoom-in; }
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 22, 40, 0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+  animation: lightbox-fade 0.18s ease;
+}
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.lightbox-figure {
+  margin: 0;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+.lightbox-large {
+  max-width: 92vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  animation: lightbox-zoom 0.22s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+@keyframes lightbox-zoom {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.lightbox-figure figcaption {
+  color: #fff;
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  text-align: center;
+  max-width: 80vw;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background: rgba(255, 255, 255, 0.28);
+  outline: none;
 }
 
 /* ═══════════════════════════════════════════════════════════════════

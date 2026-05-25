@@ -1,43 +1,71 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340">
-  <!-- Sparse tiny hat silhouettes hinting at the many hats theme -->
+  <!-- Cute, soft cloud pattern (Vân = clouds in Vietnamese ☁) -->
 
-  <!-- Mini PhD cap -->
-  <g transform="translate(40,60)" opacity="0.09" fill="#1d1c1a">
-    <path d="M 0 8 L 14 3 L 28 8 L 14 13 Z"/>
-    <ellipse cx="14" cy="11" rx="7" ry="2.5"/>
-    <line x1="22" y1="6" x2="26" y2="14" stroke="#1d1c1a" stroke-width="0.5"/>
+  <defs>
+    <radialGradient id="cloudBlue" cx="45%" cy="35%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#c9d8ec" stop-opacity="0.75"/>
+    </radialGradient>
+    <radialGradient id="cloudPink" cx="45%" cy="35%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#f1c9cf" stop-opacity="0.7"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Cloud 1 — large, top-left -->
+  <g transform="translate(20,45)" opacity="0.6">
+    <ellipse cx="32" cy="22" rx="36" ry="9" fill="url(#cloudBlue)"/>
+    <circle cx="10" cy="18" r="10" fill="url(#cloudBlue)"/>
+    <circle cx="24" cy="12" r="14" fill="url(#cloudBlue)"/>
+    <circle cx="40" cy="14" r="12" fill="url(#cloudBlue)"/>
+    <circle cx="54" cy="18" r="9" fill="url(#cloudBlue)"/>
   </g>
 
-  <!-- Mini beret -->
-  <g transform="translate(230,90)" opacity="0.09" fill="#1d1c1a">
-    <ellipse cx="12" cy="8" rx="14" ry="6"/>
-    <circle cx="18" cy="3" r="1.5"/>
+  <!-- Cloud 2 — small pink, top-right -->
+  <g transform="translate(225,75)" opacity="0.55">
+    <ellipse cx="22" cy="16" rx="24" ry="6" fill="url(#cloudPink)"/>
+    <circle cx="10" cy="12" r="8" fill="url(#cloudPink)"/>
+    <circle cx="22" cy="9" r="10" fill="url(#cloudPink)"/>
+    <circle cx="34" cy="12" r="8" fill="url(#cloudPink)"/>
   </g>
 
-  <!-- Mini bucket hat -->
-  <g transform="translate(90,210)" opacity="0.09" fill="#1d1c1a">
-    <ellipse cx="14" cy="11" rx="15" ry="3"/>
-    <path d="M 5 11 Q 4 4, 14 3 Q 24 4, 23 11 Z"/>
+  <!-- Cloud 3 — medium, middle-left -->
+  <g transform="translate(75,165)" opacity="0.55">
+    <ellipse cx="28" cy="20" rx="32" ry="8" fill="url(#cloudBlue)"/>
+    <circle cx="10" cy="15" r="10" fill="url(#cloudBlue)"/>
+    <circle cx="24" cy="10" r="13" fill="url(#cloudBlue)"/>
+    <circle cx="40" cy="13" r="11" fill="url(#cloudBlue)"/>
+    <circle cx="52" cy="16" r="8" fill="url(#cloudBlue)"/>
   </g>
 
-  <!-- Another tiny cap (witch/sun-like — placeholder for future hat) -->
-  <g transform="translate(270,250)" opacity="0.08" fill="#1d1c1a">
-    <ellipse cx="12" cy="11" rx="13" ry="2.5"/>
-    <path d="M 8 11 Q 10 2, 12 1 Q 14 2, 16 11 Z"/>
+  <!-- Cloud 4 — medium, bottom-right -->
+  <g transform="translate(235,210)" opacity="0.55">
+    <ellipse cx="24" cy="18" rx="28" ry="8" fill="url(#cloudBlue)"/>
+    <circle cx="9" cy="13" r="9" fill="url(#cloudBlue)"/>
+    <circle cx="22" cy="9" r="11" fill="url(#cloudBlue)"/>
+    <circle cx="36" cy="13" r="9" fill="url(#cloudBlue)"/>
   </g>
 
-  <!-- Mini PhD cap variation -->
-  <g transform="translate(170,280)" opacity="0.09" fill="#1d1c1a">
-    <path d="M 0 8 L 14 3 L 28 8 L 14 13 Z"/>
-    <ellipse cx="14" cy="11" rx="7" ry="2.5"/>
+  <!-- Cloud 5 — tiny pink, bottom-center -->
+  <g transform="translate(140,285)" opacity="0.5">
+    <ellipse cx="18" cy="11" rx="20" ry="5" fill="url(#cloudPink)"/>
+    <circle cx="9" cy="9" r="7" fill="url(#cloudPink)"/>
+    <circle cx="19" cy="6" r="8" fill="url(#cloudPink)"/>
+    <circle cx="29" cy="9" r="7" fill="url(#cloudPink)"/>
   </g>
 
-  <!-- Tiny stars / dots -->
+  <!-- Sparkles -->
   <g fill="#c0394a" opacity="0.22">
-    <circle cx="150" cy="40" r="1.5"/>
-    <circle cx="300" cy="160" r="1.2"/>
-    <circle cx="50" cy="160" r="1"/>
-    <circle cx="200" cy="180" r="1.3"/>
-    <circle cx="120" cy="320" r="1.5"/>
+    <circle cx="160" cy="38" r="1.6"/>
+    <circle cx="308" cy="170" r="1.3"/>
+    <circle cx="55" cy="125" r="1"/>
+    <circle cx="185" cy="155" r="1.4"/>
+    <circle cx="115" cy="245" r="1.3"/>
+    <circle cx="295" cy="295" r="1.2"/>
+  </g>
+  <g fill="#2e5c8a" opacity="0.18">
+    <circle cx="200" cy="245" r="1.2"/>
+    <circle cx="40" cy="290" r="1.1"/>
+    <circle cx="270" cy="50" r="1.3"/>
   </g>
 </svg>

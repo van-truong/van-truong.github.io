@@ -30,7 +30,9 @@
       "Bash(grep -oh \"#[0-9a-fA-F]\\\\{3,6\\\\}\" /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/sporty.svg)",
       "Bash(git -C /mnt/c/Users/vtruong/Projects/van-truong.github.io log --oneline -5)",
       "Bash(git -C /mnt/c/Users/vtruong/Projects/van-truong.github.io status --short)",
-      "Bash(grep -rln *)"
+      "Bash(grep -rln *)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:proceedings.mlr.press)"
     ]
   }
 }

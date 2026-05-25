@@ -40,6 +40,13 @@ const hats = [
     alt: 'Baseball cap',
   },
   {
+    id: 'rugged',
+    label: 'Rugged',
+    tagline: 'outdoors & wild',
+    asset: 'hats/tent.svg',
+    alt: 'Tent',
+  },
+  {
     id: 'traveler',
     label: 'Traveler',
     tagline: 'stories from the road',
@@ -316,3 +323,63 @@ async function loadLatestPosts() {
 
 loadLatestVideos();
 loadLatestPosts();
+
+/* ── Lightbox ─────────────────────────────────────────────────────────
+   Click any .polaroid img or .lightbox-img to enlarge.
+   Click backdrop, close button, or press Esc to dismiss. */
+(function () {
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest('.polaroid img, .lightbox-img');
+    if (!img || !img.src) return;
+    openLightbox(img);
+  });
+
+  function openLightbox(img) {
+    const fig = img.closest('figure');
+    const captionText = fig?.querySelector('figcaption')?.textContent.trim() || img.alt || '';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', captionText || 'Enlarged image');
+
+    const figure = document.createElement('figure');
+    figure.className = 'lightbox-figure';
+
+    const large = document.createElement('img');
+    large.className = 'lightbox-large';
+    large.src = img.src;
+    large.alt = img.alt || '';
+    figure.appendChild(large);
+
+    if (captionText) {
+      const cap = document.createElement('figcaption');
+      cap.textContent = captionText;
+      figure.appendChild(cap);
+    }
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'lightbox-close';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.textContent = '×';
+
+    overlay.appendChild(closeBtn);
+    overlay.appendChild(figure);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    function close() {
+      overlay.remove();
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === large) return;
+      close();
+    });
+    document.addEventListener('keydown', onKey);
+  }
+})();

@@ -72,6 +72,16 @@ const LOC_COORDS = {
   // 2014 bike tour & 2012 Hamilton Scholars
   'Seattle, WA':               [47.61, -122.33],
   'Daytona Beach, FL':         [29.21, -81.02],
+  // Vacations
+  'Brussels, Belgium':         [50.85, 4.35],
+  'Bruges, Belgium':           [51.21, 3.22],
+  'Antwerp, Belgium':          [51.22, 4.40],
+  'Ghent, Belgium':            [51.05, 3.73],
+  'Paris, France':             [48.86, 2.35],
+  'Berlin, Germany':           [52.52, 13.40],
+  'Nosara, Costa Rica':        [9.98, -85.65],
+  'San José, Costa Rica':      [9.93, -84.08],
+  'Chattanooga, TN':           [35.05, -85.31],
 };
 
 function getCoords(loc) {
@@ -100,6 +110,8 @@ const EVENTS = [
   { year: 2025, month: 'Oct', event: 'AWS Open Data Life Sciences Hackathon', location: 'Arlington, VA', note: 'Accepted to hack at Amazon HQ2!', attended: true },
   { year: 2025, month: 'Aug', event: 'Radical Adventure Riders NE Area Retreat', location: 'Fairfield, VT', note: 'Recipient of the Andrea Gonzalez (AG) FTWNB Memorial Scholarship.', attended: true },
   { year: 2025, month: 'Aug', event: '7th Pan-Structural Variation Hackathon', location: 'Hybrid / Houston, TX', note: "Hackathon participant — couldn't participate fully due to time zones and PhD deadlines.", attended: true },
+  { year: 2025, month: 'Mar', event: 'Costa Rica vacation — Nosara', location: 'Nosara, Costa Rica', note: 'Vacation with stops in Nosara and San José.', attended: true },
+  { year: 2025, month: 'Mar', event: 'Costa Rica vacation — San José', location: 'San José, Costa Rica', note: '', attended: true },
 
   // ── 2024 ─────────────────────────────────────────────────────────
   { year: 2024, month: 'Oct', event: 'Penn Global Dissertation Grant fieldwork — Hue', location: 'Hue, Vietnam', note: 'Final stop on three-month Vietnam fieldwork.', attended: true },
@@ -109,6 +121,7 @@ const EVENTS = [
   { year: 2024, month: 'Aug', event: 'Penn Global Dissertation Grant fieldwork — Da Nang', location: 'Da Nang, Vietnam', note: '', attended: true },
   { year: 2024, month: 'Aug', event: 'Penn Global Dissertation Grant fieldwork — Hanoi', location: 'Hanoi, Vietnam', note: '', attended: true },
   { year: 2024, month: 'Aug', event: 'Penn Global Dissertation Grant fieldwork begins', location: 'Ho Chi Minh City, Vietnam', note: 'Three-month fieldwork interviewing Vietnamese perspectives on AI adoption (Penn Global Dissertation Grant).', attended: true },
+  { year: 2024, month: 'Aug', event: 'Vietnam vacation — Hue', location: 'Hue, Vietnam', note: 'Side stop during Aug 2024 Vietnam trip (HCMC, Phong Nha, Hue, Hanoi).', attended: true },
 
   // ── 2023 ─────────────────────────────────────────────────────────
   { year: 2023, month: 'Dec', event: 'NeurIPS 2023 + AI for Science Workshop', location: 'New Orleans, LA', note: 'Paper acceptance and poster presentation.', attended: true },
@@ -128,6 +141,8 @@ const EVENTS = [
   { year: 2023, month: 'May', event: 'SAIL — Symposium on AI in Learning Health Systems', location: 'Rio Grande, PR', note: 'Career development.', attended: true },
   { year: 2023, month: 'Apr', event: 'GEMINI Workshop — Illustrator + R figures', location: 'Philadelphia, PA', note: 'Led by Allie Greenplate and Mark Painter.', attended: true },
   { year: 2023, month: 'Apr', event: 'GEMINI Workshop — ggplot + R', location: 'Philadelphia, PA', note: 'Led by Matei Ionita.', attended: true },
+  { year: 2023, month: 'Mar', event: 'TN/GA road trip — Chattanooga', location: 'Chattanooga, TN', note: 'Road trip vacation: Chattanooga + Atlanta.', attended: true },
+  { year: 2023, month: 'Mar', event: 'TN/GA road trip — Atlanta', location: 'Atlanta, GA', note: '', attended: true },
   { year: 2023, month: 'Feb', event: '6-day Stillpond Computational Cytometry Workshop', location: 'Philadelphia, PA', note: 'Led by Wade Rogers, Matei Ionita, and Herb Hoylst.', attended: true },
 
   // ── 2022 ─────────────────────────────────────────────────────────
@@ -141,12 +156,19 @@ const EVENTS = [
   { year: 2022, month: 'Jan', event: 'Pacific Symposium on Biocomputing', location: 'Kona, HI', note: 'Poster Presentation.', attended: true },
 
   // ── 2021 ─────────────────────────────────────────────────────────
+  { year: 2021, month: 'Jul', event: 'Seattle visit', location: 'Seattle, WA', note: 'Vacation.', attended: true },
   { year: 2021, month: 'Feb', event: 'Regulatory Concepts in Drug Development (Penn ITMAT)', location: 'Philadelphia, PA', note: 'Met Narendra Chirmule, who later bike-toured through India and Vietnam.', attended: true },
 
   // ── 2020 ─────────────────────────────────────────────────────────
   { year: 2020, month: 'Aug', event: 'Penn Immunology Bootcamp', location: 'Philadelphia, PA', note: '', attended: true },
   { year: 2020, month: 'Jun', event: 'NIH Library — Deep Learning Hands-On Lab', location: 'Bethesda, MD', note: '', attended: true },
   { year: 2020, month: 'Jun', event: "Sentiment Analysis on Parkinson's Disease Hackathon", location: 'Bethesda, MD', note: '', attended: true },
+  { year: 2020, month: 'Jan', event: 'Europe vacation — Brussels', location: 'Brussels, Belgium', note: 'Multi-city Europe trip: Brussels, Bruges, Antwerp, Ghent, Paris, Berlin.', attended: true },
+  { year: 2020, month: 'Jan', event: 'Europe vacation — Bruges', location: 'Bruges, Belgium', note: '', attended: true },
+  { year: 2020, month: 'Jan', event: 'Europe vacation — Antwerp', location: 'Antwerp, Belgium', note: '', attended: true },
+  { year: 2020, month: 'Jan', event: 'Europe vacation — Ghent', location: 'Ghent, Belgium', note: '', attended: true },
+  { year: 2020, month: 'Jan', event: 'Europe vacation — Paris', location: 'Paris, France', note: '', attended: true },
+  { year: 2020, month: 'Jan', event: 'Europe vacation — Berlin', location: 'Berlin, Germany', note: '', attended: true },
 
   // ── 2019 ─────────────────────────────────────────────────────────
   { year: 2019, month: 'Aug–Dec', event: 'Basic Principles of Immunology & Hypersensitivity (NIH FAES)', location: 'Bethesda, MD', note: '', attended: true },
