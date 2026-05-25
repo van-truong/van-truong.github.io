@@ -53,16 +53,41 @@ Where to drop image files. The site references these paths from `index.html`. Mi
 
 ## `sports/` — Sporty page · per-sport polaroid collages
 
-6 sports, ~4–5 photos each (25 total). Each collage shows photos in a scattered polaroid layout.
+Most sports use a single collage of 4–5 photos. Ultimate frisbee is subdivided by experience (14 subsections × 4 photos = 56 slots).
 
 | Sport | Files |
 |---|---|
 | Bike touring | `sports/bike-touring-1.jpg` … `bike-touring-5.jpg` |
 | Mountain biking | `sports/mountain-biking-1.jpg` … `mountain-biking-4.jpg` |
 | Surfing | `sports/surfing-1.jpg` … `surfing-4.jpg` |
-| Ultimate frisbee | `sports/ultimate-frisbee-1.jpg` … `ultimate-frisbee-4.jpg` |
-| Touch rugby | `sports/touch-rugby-1.jpg` … `touch-rugby-4.jpg` |
 | Rock climbing | `sports/rock-climbing-1.jpg` … `rock-climbing-4.jpg` |
+
+### Touch rugby — by season (3 × 4 = 12 slots)
+
+| Season | Files |
+|---|---|
+| 2023–2024 (HogFest champions!!) | `sports/rugby-2023-2024-1.jpg` … `-4.jpg` |
+| 2024–2025 (missed Fall for Vietnam fieldwork) | `sports/rugby-2024-2025-1.jpg` … `-4.jpg` |
+| 2025–2026 | `sports/rugby-2025-2026-1.jpg` … `-4.jpg` |
+
+### Ultimate frisbee — by experience (14 × 4 = 56 slots)
+
+| Experience | Files |
+|---|---|
+| UF social pick-up (Gainesville, FL · 2014–2017) | `sports/frisbee-uf-pickup-1.jpg` … `-4.jpg` |
+| Blacksburg social pick-up (Blacksburg, VA · 2017–2018) | `sports/frisbee-blacksburg-pickup-1.jpg` … `-4.jpg` |
+| Blacksburg / Christiansburg League (Roanoke Valley, VA · 2018?) | `sports/frisbee-roanoke-league-1.jpg` … `-4.jpg` |
+| WAFC (Washington, D.C. · 2018/2019?) | `sports/frisbee-wafc-1.jpg` … `-4.jpg` |
+| Hyattsville social pick-up (Greenbelt Park, MD · 2018–2020?) | `sports/frisbee-hyattsville-pickup-1.jpg` … `-4.jpg` |
+| PADA Summer League (Philadelphia, PA · 2021?) | `sports/frisbee-pada-summer-1.jpg` … `-4.jpg` |
+| Venoid social pick-up (Philadelphia, PA · 2021–2022) | `sports/frisbee-venoid-1.jpg` … `-4.jpg` |
+| Penn Women's "Venus" (Philadelphia, PA · 2021) | `sports/frisbee-penn-venus-1.jpg` … `-4.jpg` |
+| D-I USA College Nationals (Ontario, CA · Dec 2021) | `sports/frisbee-usa-nationals-2021-1.jpg` … `-4.jpg` |
+| Social pick-up (Ho Chi Minh City · 2024) | `sports/frisbee-hcmc-pickup-1.jpg` … `-4.jpg` |
+| Clifton 1st Beach pick-up (Cape Town · 2026) | `sports/frisbee-clifton-pickup-1.jpg` … `-4.jpg` |
+| SA Open & Women's Regionals (Cape Town · Mar 28–29, 2026) | `sports/frisbee-sa-regionals-2026-1.jpg` … `-4.jpg` |
+| SA Open & Women's Nationals (Cape Town · Apr 25–27, 2026) | `sports/frisbee-sa-nationals-2026-1.jpg` … `-4.jpg` |
+| Penn Park pick-up (Philadelphia, PA · 2026–present) | `sports/frisbee-penn-park-1.jpg` … `-4.jpg` |
 
 ---
 
