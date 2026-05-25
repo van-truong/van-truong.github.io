@@ -1,15 +1,102 @@
+# ───────────────────────────────────────────────────────────────────
 # Jekyll build output
+# ───────────────────────────────────────────────────────────────────
 _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
 
-# Bundler (if you decide to run Jekyll locally)
+# Bundler (if you run Jekyll locally)
 Gemfile.lock
 vendor/
 
-# OS / editor
+# ───────────────────────────────────────────────────────────────────
+# Node / npm / pnpm / yarn (in case you add a build step later)
+# ───────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+
+# ───────────────────────────────────────────────────────────────────
+# Environment files & secrets (NEVER commit these)
+# ───────────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+config.local.*
+
+# ───────────────────────────────────────────────────────────────────
+# OS junk
+# ───────────────────────────────────────────────────────────────────
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ───────────────────────────────────────────────────────────────────
+# Editors / IDEs
+# ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+.history/
 *.swp
+*.swo
 *~
+.*.swp
+.*.swo
+
+# ───────────────────────────────────────────────────────────────────
+# Logs & temp files
+# ───────────────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+# ───────────────────────────────────────────────────────────────────
+# Claude Code / AI agent local config (personal, not for public)
+# ───────────────────────────────────────────────────────────────────
+CLAUDE.md
+.claude/
+.claude-code/
+.cursor/
+.aider*
+
+# ───────────────────────────────────────────────────────────────────
+# Coverage / test output
+# ───────────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ───────────────────────────────────────────────────────────────────
+# Build artifacts (if you add a bundler)
+# ───────────────────────────────────────────────────────────────────
+dist/
+build/
+.cache/
+
+# ───────────────────────────────────────────────────────────────────
+# Local notes / drafts (personal scratch files)
+# ───────────────────────────────────────────────────────────────────
+NOTES.md
+TODO.md
+DRAFT*.md
+scratch/
+drafts/
