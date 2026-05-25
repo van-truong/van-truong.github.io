@@ -35,10 +35,8 @@ const hats = [
     id: 'traveler',
     label: 'Traveler',
     tagline: 'stories from the road',
-    asset: 'hats/pilot.svg',
-    alt: 'Pilot cap',
-    accessory: 'hats/scarf.svg',
-    accessoryAlt: 'Flight attendant scarf',
+    asset: 'hats/bucket-globe.svg',
+    alt: 'Bucket hat with globe patch',
   },
   {
     id: 'online',

@@ -66,53 +66,13 @@ body[data-theme="scientist"] {
 
 /* ── ARTIST theme ─────────────────────────────────────────────────── */
 body[data-theme="artist"] {
-  --bg:         #fefcf6;
-  --bg-image:
-    url('bg/art.svg'),
-    radial-gradient(circle at 15% 18%, rgba(230, 57, 70, 0.20) 0%, transparent 42%),
-    radial-gradient(circle at 82% 18%, rgba(244, 162, 97, 0.22) 0%, transparent 42%),
-    radial-gradient(circle at 90% 60%, rgba(255, 209, 102, 0.22) 0%, transparent 42%),
-    radial-gradient(circle at 82% 88%, rgba(76, 175, 110, 0.20) 0%, transparent 42%),
-    radial-gradient(circle at 15% 82%, rgba(77, 140, 232, 0.20) 0%, transparent 42%),
-    radial-gradient(circle at 50% 55%, rgba(156, 95, 190, 0.14) 0%, transparent 38%);
-  --bg-size:   300px 300px, auto, auto, auto, auto, auto, auto;
-  --bg-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  --text:       #2a1338;
-  --muted:      #6e4a78;
-  --accent:     #e63946;
-  --accent-dim: #f4a4af;
-  --card-bg:    rgba(255, 255, 255, 0.72);
-  --card-border: rgba(42, 19, 56, 0.12);
-  --heading-font: 'Oswald', 'Inter', sans-serif;
-}
-
-/* ── SPORTY theme ─────────────────────────────────────────────────── */
-body[data-theme="sporty"] {
-  --bg:         #f1f4f7;
-  --bg-image:
-    url('bg/sporty.svg'),
-    radial-gradient(ellipse at 0% 0%, rgba(214, 58, 58, 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse at 100% 100%, rgba(29, 49, 96, 0.10) 0%, transparent 55%);
-  --bg-size:   320px 320px, auto, auto;
-  --bg-repeat: repeat, no-repeat, no-repeat;
-  --text:       #14213d;
-  --muted:      #5a6a8a;
-  --accent:     #d63a3a;
-  --accent-dim: #f0a5a5;
-  --card-bg:    rgba(255, 255, 255, 0.78);
-  --card-border: rgba(20, 33, 61, 0.12);
-  --heading-font: 'Oswald', 'Inter', sans-serif;
-}
-
-/* ── TRAVELER theme ───────────────────────────────────────────────── */
-body[data-theme="traveler"] {
   --bg:         #eaf4fb;
   --bg-image:
-    url('bg/traveler.svg'),
+    url('bg/art.svg'),
     radial-gradient(ellipse at 80% 10%, rgba(95, 168, 216, 0.22) 0%, transparent 55%),
     radial-gradient(ellipse at 15% 90%, rgba(168, 208, 232, 0.30) 0%, transparent 55%),
     radial-gradient(ellipse at 50% 50%, rgba(234, 244, 251, 0.6) 0%, transparent 60%);
-  --bg-size:   380px 380px, auto, auto, auto;
+  --bg-size:   300px 300px, auto, auto, auto;
   --bg-repeat: repeat, no-repeat, no-repeat, no-repeat;
   --text:       #14365e;
   --muted:      #5a87aa;
@@ -123,14 +83,32 @@ body[data-theme="traveler"] {
   --heading-font: 'Oswald', 'Inter', sans-serif;
 }
 
-/* ── CHRONICALLY ONLINE theme ─────────────────────────────────────── */
-body[data-theme="online"] {
+/* ── SPORTY theme ─────────────────────────────────────────────────── */
+body[data-theme="sporty"] {
+  --bg:         #f7f1f3;
+  --bg-image:
+    url('bg/sporty.svg'),
+    radial-gradient(ellipse at 0% 0%, rgba(114, 47, 55, 0.14) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(60, 18, 26, 0.10) 0%, transparent 55%);
+  --bg-size:   320px 320px, auto, auto;
+  --bg-repeat: repeat, no-repeat, no-repeat;
+  --text:       #3a1018;
+  --muted:      #8a5a60;
+  --accent:     #722f37;
+  --accent-dim: #c9989e;
+  --card-bg:    rgba(255, 252, 253, 0.78);
+  --card-border: rgba(58, 16, 24, 0.12);
+  --heading-font: 'Oswald', 'Inter', sans-serif;
+}
+
+/* ── TRAVELER theme ───────────────────────────────────────────────── */
+body[data-theme="traveler"] {
   --bg:         #f1f3f8;
   --bg-image:
-    url('bg/online.svg'),
-    radial-gradient(ellipse at 80% 0%, rgba(230, 57, 70, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 100%, rgba(26, 35, 51, 0.06) 0%, transparent 55%);
-  --bg-size:   340px 340px, auto, auto;
+    url('bg/traveler.svg'),
+    radial-gradient(ellipse at 80% 0%, rgba(230, 57, 70, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 100%, rgba(26, 35, 51, 0.10) 0%, transparent 55%);
+  --bg-size:   380px 380px, auto, auto;
   --bg-repeat: repeat, no-repeat, no-repeat;
   --text:       #1a2333;
   --muted:      #6b7388;
@@ -138,6 +116,27 @@ body[data-theme="online"] {
   --accent-dim: #f3a4ab;
   --card-bg:    rgba(255, 255, 255, 0.85);
   --card-border: rgba(26, 35, 51, 0.10);
+  --heading-font: 'Oswald', 'Inter', sans-serif;
+}
+
+/* ── CHRONICALLY ONLINE theme ─────────────────────────────────────── */
+body[data-theme="online"] {
+  --bg:         #fefcf6;
+  --bg-image:
+    url('bg/online.svg'),
+    radial-gradient(circle at 15% 18%, rgba(20, 184, 166, 0.20) 0%, transparent 42%),
+    radial-gradient(circle at 82% 18%, rgba(95, 168, 216, 0.18) 0%, transparent 42%),
+    radial-gradient(circle at 90% 60%, rgba(167, 232, 224, 0.22) 0%, transparent 42%),
+    radial-gradient(circle at 82% 88%, rgba(76, 175, 110, 0.16) 0%, transparent 42%),
+    radial-gradient(circle at 15% 82%, rgba(20, 78, 74, 0.10) 0%, transparent 42%);
+  --bg-size:   340px 340px, auto, auto, auto, auto, auto;
+  --bg-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  --text:       #134e4a;
+  --muted:      #5a8a85;
+  --accent:     #14b8a6;
+  --accent-dim: #a7e8e0;
+  --card-bg:    rgba(255, 255, 255, 0.72);
+  --card-border: rgba(19, 78, 74, 0.12);
   --heading-font: 'Oswald', 'Inter', sans-serif;
 }
 
@@ -1182,14 +1181,14 @@ body.reading .page {
 #travel-map { width: 100%; height: 100%; }
 .travel-map-fallback { padding: 1rem; text-align: center; color: var(--muted); }
 
-/* Super-light sky-blue tint on tiles when traveler theme is active.
-   sepia tints grayscale toward yellow, hue-rotate(180deg) flips it to blue,
-   then lighten and soften for a paper-map-on-a-clear-day feel. */
+/* Soft sky-blue tint on the map. Voyager tiles already have light-blue water
+   and visible country borders, so just nudge the saturation/lightness instead
+   of recoloring (which was washing out the borders entirely). */
 body[data-theme="traveler"] .leaflet-container {
   background: #d6e9f5;
 }
 body[data-theme="traveler"] .leaflet-tile-pane {
-  filter: sepia(0.55) hue-rotate(180deg) saturate(1.1) brightness(1.10);
+  filter: saturate(0.85) brightness(1.02);
 }
 
 .travel-marker { background: transparent; border: none; }

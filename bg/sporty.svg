@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
   <defs>
     <style>
-      .line { stroke: #1d3160; fill: none; stroke-width: 1.2; }
-      .thick { stroke: #1d3160; fill: none; stroke-width: 1.6; }
-      .fill { fill: #1d3160; }
-      .sketch { stroke: #1d3160; fill: none; stroke-width: 1; stroke-dasharray: 2 1.5; }
+      .line { stroke: #722f37; fill: none; stroke-width: 1.2; }
+      .thick { stroke: #722f37; fill: none; stroke-width: 1.6; }
+      .fill { fill: #722f37; }
+      .sketch { stroke: #722f37; fill: none; stroke-width: 1; stroke-dasharray: 2 1.5; }
     </style>
   </defs>
 
   <!-- Diagonal jersey stripes (very faint) -->
   <g opacity="0.06">
-    <path d="M -50 50 L 370 -90" stroke="#1d3160" stroke-width="14"/>
-    <path d="M -50 200 L 370 60" stroke="#1d3160" stroke-width="14"/>
-    <path d="M -50 360 L 370 220" stroke="#1d3160" stroke-width="14"/>
+    <path d="M -50 50 L 370 -90" stroke="#722f37" stroke-width="14"/>
+    <path d="M -50 200 L 370 60" stroke="#722f37" stroke-width="14"/>
+    <path d="M -50 360 L 370 220" stroke="#722f37" stroke-width="14"/>
   </g>
 
   <!-- Whistle (top-left) -->
@@ -28,7 +28,7 @@
     <path d="M -6 -6 Q 0 -9, 6 -6" class="line" stroke-width="0.7"/>
     <path d="M -6 6 Q 0 9, 6 6" class="line" stroke-width="0.7"/>
     <!-- stitches -->
-    <g stroke="#1d3160" stroke-width="0.5" fill="none">
+    <g stroke="#722f37" stroke-width="0.5" fill="none">
       <line x1="-4" y1="-7.5" x2="-4" y2="-5.5"/>
       <line x1="-1" y1="-8.3" x2="-1" y2="-6.3"/>
       <line x1="2"  y1="-8.3" x2="2"  y2="-6.3"/>

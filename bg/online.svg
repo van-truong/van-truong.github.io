@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340">
   <defs>
     <style>
-      .ink { fill: #1a2333; }
-      .stroke { stroke: #1a2333; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+      .ink { fill: #134e4a; }
+      .stroke { stroke: #134e4a; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
     </style>
   </defs>
 
@@ -45,7 +45,7 @@
   <g transform="translate(150,260)" opacity="0.15">
     <path d="M -8 -2 Q -8 -12, 0 -12 Q 8 -12, 8 -2 L 9 5 L -9 5 Z" class="stroke"/>
     <path d="M -3 5 Q 0 9, 3 5" class="stroke"/>
-    <circle cx="8" cy="-9" r="2.5" fill="#e63946" opacity="0.7"/>
+    <circle cx="8" cy="-9" r="2.5" fill="#14b8a6" opacity="0.7"/>
   </g>
 
   <!-- Camera -->
@@ -62,7 +62,7 @@
   </g>
 
   <!-- Tiny scattered notification dots -->
-  <g fill="#e63946" opacity="0.40">
+  <g fill="#14b8a6" opacity="0.40">
     <circle cx="40" cy="140" r="1.5"/>
     <circle cx="200" cy="200" r="1.5"/>
     <circle cx="280" cy="100" r="1.3"/>

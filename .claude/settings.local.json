@@ -24,7 +24,10 @@
       "Bash(openssl dgst *)",
       "Bash(curl -sL \"https://unpkg.com/leaflet@1.9.4/dist/leaflet.js\")",
       "Bash(npm list *)",
-      "Bash(grep -oh \"#[0-9a-fA-F]\\\\{3,6\\\\}\\\\|rgb[a]\\\\?\\([^\\)]*\\)\" /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/home.svg /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/science.svg /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/traveler.svg)"
+      "Bash(grep -oh \"#[0-9a-fA-F]\\\\{3,6\\\\}\\\\|rgb[a]\\\\?\\([^\\)]*\\)\" /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/home.svg /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/science.svg /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/traveler.svg)",
+      "Bash(grep -oh \"#[0-9a-fA-F]\\\\{3,6\\\\}\" /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/online.svg)",
+      "Bash(grep -oh \"#[0-9a-fA-F]\\\\{3,6\\\\}\" /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/traveler.svg)",
+      "Bash(grep -oh \"#[0-9a-fA-F]\\\\{3,6\\\\}\" /mnt/c/Users/vtruong/Projects/van-truong.github.io/bg/sporty.svg)"
     ]
   }
 }
