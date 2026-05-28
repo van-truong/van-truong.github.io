@@ -114,12 +114,11 @@ const EVENTS = [
   { year: 2025, month: 'Mar', event: 'Costa Rica vacation — San José', location: 'San José, Costa Rica', note: '', attended: true },
 
   // ── 2024 ─────────────────────────────────────────────────────────
-  { year: 2024, month: 'Oct', event: 'Penn Global Dissertation Grant fieldwork — Hue', location: 'Hue, Vietnam', note: 'Final stop on three-month Vietnam fieldwork.', attended: true },
-  { year: 2024, month: 'Sep', event: 'Penn Global Dissertation Grant fieldwork — Mui Ne', location: 'Mui Ne, Vietnam', note: '', attended: true },
+  { year: 2024, month: 'Sep', event: 'Vietnam vacation — Mui Ne', location: 'Mui Ne, Vietnam', note: '', attended: true },
   { year: 2024, month: 'Aug', event: 'AIM-AHEAD Annual Meeting — AI for Health Equity Symposium', location: 'Atlanta, GA', note: "Presenting a team-science 'Works In Progress' poster.", attended: true },
-  { year: 2024, month: 'Aug', event: 'Penn Global Dissertation Grant fieldwork — Nha Phong', location: 'Nha Phong, Vietnam', note: '', attended: true },
-  { year: 2024, month: 'Aug', event: 'Penn Global Dissertation Grant fieldwork — Da Nang', location: 'Da Nang, Vietnam', note: '', attended: true },
-  { year: 2024, month: 'Aug', event: 'Penn Global Dissertation Grant fieldwork — Hanoi', location: 'Hanoi, Vietnam', note: '', attended: true },
+  { year: 2024, month: 'Aug', event: 'Vietnam vacation — Nha Phong', location: 'Nha Phong, Vietnam', note: 'Supported by the Penn Global Dissertation Grant.', attended: true },
+  { year: 2024, month: 'Aug', event: 'Conducting fieldwork — Da Nang', location: 'Da Nang, Vietnam', note: 'Supported by the Penn Global Dissertation Grant.', attended: true },
+  { year: 2024, month: 'Aug', event: 'Conducting fieldwork — Hanoi', location: 'Hanoi, Vietnam', note: '', attended: true },
   { year: 2024, month: 'Aug', event: 'Penn Global Dissertation Grant fieldwork begins', location: 'Ho Chi Minh City, Vietnam', note: 'Three-month fieldwork interviewing Vietnamese perspectives on AI adoption (Penn Global Dissertation Grant).', attended: true },
   { year: 2024, month: 'Aug', event: 'Vietnam vacation — Hue', location: 'Hue, Vietnam', note: 'Side stop during Aug 2024 Vietnam trip (HCMC, Phong Nha, Hue, Hanoi).', attended: true },
 
