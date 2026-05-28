@@ -1280,6 +1280,30 @@ body.reading .page {
   padding: 0.75rem 0.25rem 1rem;
 }
 
+/* Hiking log table (Rugged page) */
+.hike-log {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+.hike-log th,
+.hike-log td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--card-border);
+}
+.hike-log thead th {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+}
+.hike-log tbody tr:last-child td {
+  border-bottom: none;
+}
+
 /* ── All-time fave trips (Traveler page) ──────────────────────────── */
 .fave-trips {
   display: grid;
