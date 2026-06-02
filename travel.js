@@ -289,14 +289,12 @@ function renderNextStop() {
   `;
 }
 
-/* ── Timeline render (excludes tentative — those live in Next stop) ── */
+/* ── Timeline render (includes tentative — they also appear in Next stop) ── */
 function renderTravelTimeline() {
   const container = document.getElementById('travel-log');
   if (!container) return;
 
-  const timelineEvents = EVENTS.filter(e => !e.tentative);
-
-  const sorted = [...timelineEvents].sort((a, b) => {
+  const sorted = [...EVENTS].sort((a, b) => {
     if (b.year !== a.year) return b.year - a.year;
     return monthSort(b.month) - monthSort(a.month);
   });
@@ -306,13 +304,13 @@ function renderTravelTimeline() {
   const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
 
   const places = new Set();
-  timelineEvents.forEach(e => {
+  EVENTS.forEach(e => {
     if (e.attended !== false && getCoords(e.location)) places.add(e.location);
   });
 
   container.innerHTML = `
     <div class="travel-stats">
-      <span><strong>${timelineEvents.length}</strong> events</span>
+      <span><strong>${EVENTS.length}</strong> events</span>
       <span><strong>${places.size}</strong> places</span>
       <span><strong>${years.length}</strong> years</span>
     </div>
