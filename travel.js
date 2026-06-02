@@ -246,12 +246,57 @@ function escapeHtml(s) {
   }[c]));
 }
 
-/* ── Timeline render ──────────────────────────────────────────────── */
+/* ── Event card ───────────────────────────────────────────────────── */
+function renderEventCard(e) {
+  const flags = [
+    e.tentative && 'tentative',
+    e.confirmed && 'confirmed',
+    e.attended === false && 'not-attended',
+  ].filter(Boolean).join(' ');
+  const badge = e.confirmed
+    ? '<span class="event-badge badge-confirmed">confirmed</span>'
+    : e.tentative
+      ? '<span class="event-badge badge-tentative">tentative</span>'
+      : '';
+  return `
+    <div class="travel-event${flags ? ' ' + flags : ''}">
+      <div class="travel-event-month">${escapeHtml(e.month)}</div>
+      <div class="travel-event-title">${escapeHtml(e.event)}${badge}</div>
+      <div class="travel-event-place">${escapeHtml(e.location)}</div>
+      ${e.note ? `<div class="travel-event-note">${escapeHtml(e.note)}</div>` : ''}
+    </div>`;
+}
+
+/* ── Next-stop render (tentative events only) ─────────────────────── */
+function renderNextStop() {
+  const container = document.getElementById('travel-next-stop');
+  if (!container) return;
+
+  const tentative = EVENTS.filter(e => e.tentative).sort((a, b) => {
+    if (a.year !== b.year) return a.year - b.year;
+    return monthSort(a.month) - monthSort(b.month);
+  });
+
+  if (tentative.length === 0) {
+    container.innerHTML = '<p class="travel-loading">Nothing tentative on the calendar right now.</p>';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="travel-events">
+      ${tentative.map(renderEventCard).join('')}
+    </div>
+  `;
+}
+
+/* ── Timeline render (excludes tentative — those live in Next stop) ── */
 function renderTravelTimeline() {
   const container = document.getElementById('travel-log');
   if (!container) return;
 
-  const sorted = [...EVENTS].sort((a, b) => {
+  const timelineEvents = EVENTS.filter(e => !e.tentative);
+
+  const sorted = [...timelineEvents].sort((a, b) => {
     if (b.year !== a.year) return b.year - a.year;
     return monthSort(b.month) - monthSort(a.month);
   });
@@ -261,13 +306,13 @@ function renderTravelTimeline() {
   const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
 
   const places = new Set();
-  EVENTS.forEach(e => {
+  timelineEvents.forEach(e => {
     if (e.attended !== false && getCoords(e.location)) places.add(e.location);
   });
 
   container.innerHTML = `
     <div class="travel-stats">
-      <span><strong>${EVENTS.length}</strong> events</span>
+      <span><strong>${timelineEvents.length}</strong> events</span>
       <span><strong>${places.size}</strong> places</span>
       <span><strong>${years.length}</strong> years</span>
     </div>
@@ -275,25 +320,7 @@ function renderTravelTimeline() {
       <section class="travel-year">
         <h3 class="travel-year-heading">${year}</h3>
         <div class="travel-events">
-          ${byYear[year].map(e => {
-            const flags = [
-              e.tentative && 'tentative',
-              e.confirmed && 'confirmed',
-              e.attended === false && 'not-attended',
-            ].filter(Boolean).join(' ');
-            const badge = e.confirmed
-              ? '<span class="event-badge badge-confirmed">confirmed</span>'
-              : e.tentative
-                ? '<span class="event-badge badge-tentative">tentative</span>'
-                : '';
-            return `
-            <div class="travel-event${flags ? ' ' + flags : ''}">
-              <div class="travel-event-month">${escapeHtml(e.month)}</div>
-              <div class="travel-event-title">${escapeHtml(e.event)}${badge}</div>
-              <div class="travel-event-place">${escapeHtml(e.location)}</div>
-              ${e.note ? `<div class="travel-event-note">${escapeHtml(e.note)}</div>` : ''}
-            </div>`;
-          }).join('')}
+          ${byYear[year].map(renderEventCard).join('')}
         </div>
       </section>
     `).join('')}
@@ -370,5 +397,6 @@ function initTravelMap() {
 }
 
 /* ── Wire it up ───────────────────────────────────────────────────── */
+renderNextStop();                // cheap — DOM only
 renderTravelTimeline();          // cheap — DOM only
 window.initTravelMap = initTravelMap;   // called by app.js when hat is selected
