@@ -137,6 +137,47 @@ body[data-theme="rugged"] {
   --heading-font: 'Oswald', 'Inter', sans-serif;
 }
 
+/* ── DARK MODE ────────────────────────────────────────────────────── */
+/* Universal overrides — applied on top of whichever hat theme is active. */
+html[data-mode="dark"] body,
+html[data-mode="dark"] body[data-theme] {
+  --bg:          #0f1117;
+  --bg-image:    none;
+  --text:        #e8eaed;
+  --muted:       #9aa0ac;
+  --card-bg:     rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Theme toggle button (top-right, fixed) ───────────────────────── */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px -6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.theme-toggle:hover { transform: rotate(15deg); }
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text);
+}
+.icon-moon { display: none; }
+html[data-mode="dark"] .icon-sun  { display: none; }
+html[data-mode="dark"] .icon-moon { display: block; }
+
 /* ── CHRONICALLY ONLINE theme ─────────────────────────────────────── */
 body[data-theme="online"] {
   --bg:         #fefcf6;

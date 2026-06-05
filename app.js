@@ -383,3 +383,19 @@ loadLatestPosts();
     document.addEventListener('keydown', onKey);
   }
 })();
+
+/* ── Light/Dark mode toggle ─────────────────────────────────────────── */
+(function () {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
+    const isDark = document.documentElement.dataset.mode === 'dark';
+    if (isDark) {
+      delete document.documentElement.dataset.mode;
+      localStorage.setItem('mode', 'light');
+    } else {
+      document.documentElement.dataset.mode = 'dark';
+      localStorage.setItem('mode', 'dark');
+    }
+  });
+})();
