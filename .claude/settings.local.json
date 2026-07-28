@@ -42,7 +42,11 @@
       "Bash(mkdir -p preview/_shots)",
       "Bash(\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=1280,2400 --screenshot=\"C:\\\\\\\\Users\\\\\\\\vtruong\\\\\\\\Projects\\\\\\\\van-truong.github.io\\\\\\\\preview\\\\\\\\_shots\\\\\\\\home.png\" \"http://localhost:8741/preview/index.html\")",
       "Bash(\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=1280,1200 --screenshot=\"C:\\\\\\\\Users\\\\\\\\vtruong\\\\\\\\Projects\\\\\\\\van-truong.github.io\\\\\\\\preview\\\\\\\\_shots\\\\\\\\scientist.png\" \"http://localhost:8741/preview/index.html#scientist\")",
-      "Bash(\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=900,1000 --force-device-scale-factor=1.5 --screenshot=\"C:\\\\\\\\Users\\\\\\\\vtruong\\\\\\\\Projects\\\\\\\\van-truong.github.io\\\\\\\\preview\\\\\\\\_shots\\\\\\\\hero-zoom.png\" \"http://localhost:8741/preview/index.html#rugged\")"
+      "Bash(\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=900,1000 --force-device-scale-factor=1.5 --screenshot=\"C:\\\\\\\\Users\\\\\\\\vtruong\\\\\\\\Projects\\\\\\\\van-truong.github.io\\\\\\\\preview\\\\\\\\_shots\\\\\\\\hero-zoom.png\" \"http://localhost:8741/preview/index.html#rugged\")",
+      "Bash(jobs -l)",
+      "Bash(kill %1 %2 %3)",
+      "Bash(pkill -f \"http.server 8741\")",
+      "Bash(pkill -f \"headless=new\")"
     ]
   }
 }
