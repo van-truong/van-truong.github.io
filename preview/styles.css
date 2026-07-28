@@ -1,0 +1,1736 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Van Q. Truong — many-hats site
+   Each hat (data-theme on <body>) swaps colors, fonts, and patterns.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Reset & base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+button { font: inherit; cursor: pointer; background: none; border: 0; color: inherit; padding: 0; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; transition: opacity 0.2s; }
+a:hover { opacity: 0.7; }
+ul.plain { list-style: none; padding: 0; margin: 0; }
+ul.plain li + li { margin-top: 0.5rem; }
+ul.plain.bigger li + li { margin-top: 0.8rem; }
+
+/* ── Theme variables (HOME / default) ─────────────────────────────── */
+/* Refined scrapbook: flat soft ground, one gentle two-tone wash, no
+   tiled wallpaper. Serif headings + one sans body + script accents.  */
+body {
+  --bg:         #f6f7fb;
+  --bg-image:
+    radial-gradient(ellipse at 50% -10%, rgba(192, 57, 74, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 110%, rgba(46, 92, 138, 0.07) 0%, transparent 45%);
+  --bg-size:   auto, auto;
+  --bg-repeat: no-repeat, no-repeat;
+  --text:       #14213d;
+  --muted:      #5a6680;
+  --accent:     #c0394a;
+  --accent-dim: #ecb0b6;
+  --card-bg:    rgba(255, 255, 255, 0.82);
+  --card-border: rgba(20, 33, 61, 0.09);
+  --heading-font: 'Fraunces', Georgia, serif;
+  --script-font:  'Caveat', cursive;
+  --body-font:    'Inter', system-ui, -apple-system, sans-serif;
+
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-size:  var(--bg-size);
+  background-repeat: var(--bg-repeat);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.6s ease, color 0.6s ease;
+  min-height: 100vh;
+}
+
+/* ── SCIENTIST theme ──────────────────────────────────────────────── */
+body[data-theme="scientist"] {
+  --bg:         #fcf5f9;
+  --bg-image:
+    radial-gradient(ellipse at 50% -10%, rgba(198, 54, 120, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 110%, rgba(198, 54, 120, 0.05) 0%, transparent 45%);
+  --bg-size:   auto, auto;
+  --bg-repeat: no-repeat, no-repeat;
+  --text:       #3d1432;
+  --muted:      #8a567a;
+  --accent:     #c63678;
+  --accent-dim: #f3aac9;
+  --card-bg:    rgba(255, 250, 253, 0.85);
+  --card-border: rgba(61, 20, 50, 0.1);
+}
+
+/* ── ARTIST theme ─────────────────────────────────────────────────── */
+body[data-theme="artist"] {
+  --bg:         #eff6fb;
+  --bg-image:
+    radial-gradient(ellipse at 80% -5%, rgba(95, 168, 216, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 105%, rgba(168, 208, 232, 0.16) 0%, transparent 50%);
+  --bg-size:   auto, auto;
+  --bg-repeat: no-repeat, no-repeat;
+  --text:       #14365e;
+  --muted:      #5a87aa;
+  --accent:     #2e6a99;
+  --accent-dim: #a8d0e8;
+  --card-bg:    rgba(255, 255, 255, 0.85);
+  --card-border: rgba(46, 106, 153, 0.14);
+}
+
+/* ── SPORTY theme ─────────────────────────────────────────────────── */
+body[data-theme="sporty"] {
+  --bg:         #faf4f5;
+  --bg-image:
+    radial-gradient(ellipse at 0% -5%, rgba(158, 43, 63, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 105%, rgba(60, 18, 26, 0.06) 0%, transparent 50%);
+  --bg-size:   auto, auto;
+  --bg-repeat: no-repeat, no-repeat;
+  --text:       #3a1018;
+  --muted:      #8a5a60;
+  --accent:     #9e2b3f;
+  --accent-dim: #d9a3ac;
+  --card-bg:    rgba(255, 252, 253, 0.85);
+  --card-border: rgba(58, 16, 24, 0.12);
+}
+
+/* ── TRAVELER theme ───────────────────────────────────────────────── */
+body[data-theme="traveler"] {
+  --bg:         #f3f5f9;
+  --bg-image:
+    radial-gradient(ellipse at 80% -5%, rgba(230, 57, 70, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 105%, rgba(26, 35, 51, 0.07) 0%, transparent 50%);
+  --bg-size:   auto, auto;
+  --bg-repeat: no-repeat, no-repeat;
+  --text:       #1a2333;
+  --muted:      #6b7388;
+  --accent:     #e63946;
+  --accent-dim: #f3a4ab;
+  --card-bg:    rgba(255, 255, 255, 0.88);
+  --card-border: rgba(26, 35, 51, 0.10);
+}
+
+/* ── RUGGED theme (backpacking + foraging) ─────────────────────────── */
+body[data-theme="rugged"] {
+  --bg:         #f0f5ef;
+  --bg-image:
+    radial-gradient(ellipse at 15% -5%, rgba(56, 102, 65, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 105%, rgba(192, 57, 74, 0.06) 0%, transparent 45%);
+  --bg-size:   auto, auto;
+  --bg-repeat: no-repeat, no-repeat;
+  --text:       #1f3a2a;
+  --muted:      #5a7060;
+  --accent:     #386641;
+  --accent-dim: #b7d4bd;
+  --card-bg:    rgba(255, 255, 255, 0.85);
+  --card-border: rgba(31, 58, 42, 0.10);
+}
+
+/* ── DARK MODE ────────────────────────────────────────────────────── */
+/* Universal overrides — applied on top of whichever hat theme is active. */
+html[data-mode="dark"] body,
+html[data-mode="dark"] body[data-theme] {
+  --bg:          #0f1117;
+  --bg-image:    none;
+  --text:        #e8eaed;
+  --muted:       #9aa0ac;
+  --card-bg:     rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Theme toggle button (top-right, fixed) ───────────────────────── */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px -6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.theme-toggle:hover { transform: rotate(15deg); }
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text);
+}
+.icon-moon { display: none; }
+html[data-mode="dark"] .icon-sun  { display: none; }
+html[data-mode="dark"] .icon-moon { display: block; }
+
+/* ── CHRONICALLY ONLINE theme ─────────────────────────────────────── */
+body[data-theme="online"] {
+  --bg:         #f1f9f8;
+  --bg-image:
+    radial-gradient(ellipse at 15% -5%, rgba(20, 184, 166, 0.09) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 105%, rgba(95, 168, 216, 0.08) 0%, transparent 45%);
+  --bg-size:   auto, auto;
+  --bg-repeat: no-repeat, no-repeat;
+  --text:       #134e4a;
+  --muted:      #5a8a85;
+  --accent:     #0f9e8f;
+  --accent-dim: #a7e8e0;
+  --card-bg:    rgba(255, 255, 255, 0.85);
+  --card-border: rgba(19, 78, 74, 0.12);
+}
+
+/* ── Layout ───────────────────────────────────────────────────────── */
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2rem;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+/* ── Top nav block (above headshot) ───────────────────────────────── */
+.nav-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.nav-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  color: #9aa3b5;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+.nav-title {
+  font-family: var(--heading-font);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+.nav-title .wink {
+  color: var(--accent);
+  display: inline-block;
+  font-style: normal;
+  font-size: 0.65em;
+  transform: translateY(-6px) rotate(4deg);
+  transition: color 0.4s ease;
+}
+.nav-invite {
+  font-family: var(--script-font);
+  font-size: 1.35rem;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+  transition: color 0.4s ease;
+}
+
+.portrait {
+  position: relative;
+  width: 292px;
+  margin-top: 2.5rem;
+}
+/* Polaroid-style frame: white mat, deeper chin, gentle tilt */
+.portrait-frame {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  background: #fff;
+  padding: 12px 12px 44px;
+  border-radius: 3px;
+  transform: rotate(-1.6deg);
+  box-shadow: 0 16px 40px -18px rgba(20, 33, 61, 0.35), 0 3px 10px -4px rgba(20, 33, 61, 0.14);
+  transition: transform 0.4s ease, box-shadow 0.6s ease;
+}
+.portrait-frame:hover { transform: rotate(0deg); }
+/* Tape strips holding the polaroid down */
+.portrait-frame::before,
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  width: 74px;
+  height: 26px;
+  background: rgba(240, 235, 215, 0.6);
+  border-left: 1px dashed rgba(20, 33, 61, 0.12);
+  border-right: 1px dashed rgba(20, 33, 61, 0.12);
+  box-shadow: 0 1px 3px rgba(20, 33, 61, 0.08);
+  z-index: 1;
+}
+.portrait-frame::before { top: -10px; left: -26px; transform: rotate(-38deg); }
+.portrait-frame::after  { bottom: 4px; right: -30px; transform: rotate(-42deg); }
+.headshot {
+  width: 100%;
+  aspect-ratio: 603 / 801;
+  object-fit: cover;
+  border-radius: 2px;
+}
+.portrait-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  text-align: center;
+  font-family: var(--script-font);
+  font-size: 1.3rem;
+  color: #4a5266;
+  pointer-events: none;
+}
+
+/* Hat sits above the headshot, overlapping the top portion of the head */
+.hat-slot {
+  position: absolute;
+  top: -16%;
+  left: 50%;
+  width: 88%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+.hat-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* entrance animation defaults */
+  opacity: 0;
+  transform: translateY(-50px) rotate(-12deg) scale(0.7);
+  transition:
+    opacity 0.45s ease,
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.18));
+}
+.hat-svg.active {
+  opacity: 1;
+  transform: translateY(0) rotate(0) scale(1);
+}
+/* Beret sits smaller and slightly tilted, classic artist pose */
+.hat-svg[src*="beret"].active {
+  transform: translateY(6px) rotate(-14deg) scale(0.82);
+  transform-origin: 50% 70%;
+}
+.hat-svg.leaving {
+  opacity: 0;
+  transform: translateY(-40px) rotate(8deg) scale(0.85);
+}
+
+/* Accessory (e.g. flight attendant scarf) — sits at the neck area */
+.accessory-slot {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  width: 92%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 3;
+}
+.accessory-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transform: translateY(30px) scale(0.85);
+  transition:
+    opacity 0.45s ease,
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.18));
+}
+.accessory-svg.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.accessory-svg.leaving {
+  opacity: 0;
+  transform: translateY(30px) scale(0.85);
+}
+
+/* ── Hero text ────────────────────────────────────────────────────── */
+.name {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.05;
+  transition: font-family 0.4s ease;
+}
+.tagline {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0;
+  min-height: 1.6em;
+  transition: color 0.4s ease;
+}
+
+/* ── Hat dock — a shelf of little cards over a dotted rule ────────── */
+.hat-dock {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5rem 0.25rem 1.1rem;
+  border-bottom: 2px dotted var(--accent-dim);
+  margin-top: 0.6rem;
+  transition: border-color 0.4s;
+}
+.hat-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.55rem 0.8rem 0.5rem;
+  border-radius: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 3px 10px -6px rgba(20, 33, 61, 0.25);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.hat-button:nth-child(odd)  { transform: rotate(-1.4deg); }
+.hat-button:nth-child(even) { transform: rotate(1.2deg); }
+.hat-button:hover {
+  transform: translateY(-4px) rotate(0deg);
+  box-shadow: 0 8px 18px -8px rgba(20, 33, 61, 0.3);
+}
+.hat-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.hat-button[aria-pressed="true"] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 6px 14px -8px rgba(20, 33, 61, 0.3);
+  transform: rotate(0deg);
+}
+.hat-button[aria-pressed="true"] .hat-button-label {
+  color: var(--accent);
+}
+.hat-button-thumb {
+  width: 48px;
+  height: 36px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hat-button-thumb img {
+  width: 100%;
+  height: auto;
+}
+.hat-button-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-align: center;
+  transition: color 0.25s;
+}
+
+/* ── Content sections ─────────────────────────────────────────────── */
+.content {
+  animation: fadeUp 0.6s ease both;
+}
+.content[hidden] { display: none; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* HOME intro */
+.intro { max-width: 640px; margin: 0 auto; text-align: center; }
+.lede { font-size: 1.25rem; line-height: 1.55; }
+.prompt { color: var(--muted); margin-top: 1.5rem; font-style: italic; }
+.contact-block {
+  margin: 3rem auto 0;
+  text-align: center;
+}
+.contact-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.4rem;
+}
+.contact-link {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  border-bottom-width: 2px;
+}
+.contact-secondary {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.contact-secondary a {
+  color: var(--muted);
+  border-bottom-color: var(--card-border);
+  margin: 0 0.2rem;
+}
+
+/* Education & training — subhead-style section with a grid of degree cards */
+.edu-section { margin-bottom: 2.5rem; }
+.edu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+.edu-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 1rem;
+  row-gap: 0.15rem;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.edu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -16px rgba(0, 0, 0, 0.22);
+}
+.edu-degree {
+  grid-row: 1 / span 3;
+  align-self: center;
+  justify-self: start;
+  min-width: 3.75rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--accent-dim);
+  color: var(--text);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.edu-field {
+  grid-column: 2;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.edu-school {
+  grid-column: 2;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.35;
+}
+.edu-location {
+  grid-column: 2;
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+/* Service & leadership list (above experience) */
+.service-list { margin-bottom: 2.5rem; }
+
+/* Research focus card — promoted to top of PhDiva page */
+.research-focus-card {
+  margin: 0 0 2.5rem;
+  max-width: 720px;
+}
+
+/* Awards & funding — full-width feature box with polaroid per award */
+.awards-feature {
+  margin: 2.5rem 0;
+}
+.awards-feature .award-total {
+  display: block;
+  margin: 0.5rem auto 1.5rem;
+  text-align: center;
+}
+.award-list {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+.award-row {
+  display: block;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--card-border);
+}
+.award-row:last-child { border-bottom: 0; }
+.awards-collage {
+  margin-top: 2rem;
+}
+.award-text strong {
+  display: block;
+  font-size: 0.97rem;
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+.award-meta {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+/* Smaller polaroid variant (used in awards list) */
+.polaroid.polaroid-sm {
+  width: 110px;
+  padding: 7px 7px 5px;
+}
+.polaroid.polaroid-sm .polaroid-img {
+  aspect-ratio: 4 / 3;
+}
+.polaroid.polaroid-sm .polaroid-img::after {
+  font-size: 1.2rem;
+}
+.polaroid.polaroid-sm figcaption {
+  font-size: 0.78rem;
+  margin-top: 6px;
+  min-height: 1.1em;
+}
+
+@media (max-width: 720px) {
+  .polaroid.polaroid-sm { width: 95px; }
+}
+
+/* Publications: year-grouped */
+.pubs-year { margin-bottom: 1.8rem; }
+.pubs-year:last-child { margin-bottom: 0; }
+.pubs-year-heading {
+  font-family: var(--heading-font);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px dotted var(--accent-dim);
+}
+
+/* Publication list with tags */
+.pubs li {
+  padding-left: 0;
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+.pub-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent-dim);
+  color: var(--text);
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  margin-right: 0.55rem;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+.pub-note {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  font-style: italic;
+  margin-left: 0.3rem;
+}
+
+/* Cursive "Vân = clouds" caption on the home intro */
+.van-cloud {
+  font-family: 'Caveat', cursive;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  color: var(--accent);
+  margin: 0.1rem 0 1.1rem;
+  letter-spacing: 0.01em;
+}
+.van-cloud-glyph {
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: #6b8bb5;
+  font-size: 1.15rem;
+  vertical-align: 2px;
+}
+
+/* Placeholder note — little rubber-stamp aside */
+.placeholder-note {
+  text-align: center;
+  margin: 2.5rem auto 0;
+  padding: 0.5rem 1.4rem;
+  border: 2px dashed var(--accent-dim);
+  border-radius: 6px;
+  color: var(--muted);
+  width: fit-content;
+  max-width: 560px;
+  font-family: var(--script-font);
+  font-size: 1.25rem;
+  transform: rotate(-1.5deg);
+}
+.placeholder-note p { margin: 0; }
+
+/* Award total tag */
+.award-total {
+  display: inline-block;
+  font-family: var(--heading-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  margin: 0 0 1rem;
+}
+
+/* Section headers (scientist/artist/outdoorsy) */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+.section-header h2 {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  line-height: 1.05;
+  font-style: italic;
+  color: var(--accent);
+}
+.section-lede {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ── Grid of cards ────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.5rem 1.4rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -18px rgba(0, 0, 0, 0.2);
+}
+.card h3 {
+  font-family: var(--heading-font);
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.card p { margin: 0 0 0.75rem; }
+.card p:last-child { margin-bottom: 0; }
+.card.highlight {
+  background: linear-gradient(135deg, var(--accent-dim) 0%, var(--card-bg) 70%);
+  border-color: var(--accent);
+}
+
+/* ── Timeline (artist) ────────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 0;
+}
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--card-border);
+  align-items: baseline;
+}
+.timeline-entry:last-child { border-bottom: 0; }
+.year {
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.entry-body h3 {
+  font-family: var(--heading-font);
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.entry-body p { margin: 0 0 0.5rem; }
+.entry-body p:last-child { margin-bottom: 0; }
+.meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Subsection (sci-art under artist) ────────────────────────────── */
+.subsection {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px dashed var(--card-border);
+}
+.subhead {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px dotted var(--accent-dim);
+}
+.subhead-lede {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 1.5rem;
+}
+
+/* ── Feature (outdoorsy bike tour) ────────────────────────────────── */
+.feature {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 2.25rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.feature-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+.feature-title {
+  font-family: var(--heading-font);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0 2rem;
+}
+.stat-num {
+  font-family: var(--heading-font);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.site-footer p { margin: 0.3rem 0; }
+.footer-meta { font-style: italic; opacity: 0.7; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Blog (Jekyll)
+   ═══════════════════════════════════════════════════════════════════ */
+
+body.reading .page {
+  max-width: 720px;
+}
+.page--post,
+.page--blog-index {
+  padding-top: 2.5rem;
+}
+
+/* Back nav */
+.post-back-nav {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+.post-back-nav a {
+  color: var(--muted);
+  border-bottom-color: var(--card-border);
+}
+.post-back-nav .dot { margin: 0 0.5rem; opacity: 0.5; }
+
+/* Post header */
+.post-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.post-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+.post-title {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.post-subtitle {
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+.post-loc { font-style: italic; }
+
+/* Video embed */
+.post-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 2rem 0 2.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px -18px rgba(0, 0, 0, 0.3);
+}
+.post-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Post body */
+.post-body {
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+.post-body > * + * { margin-top: 1.1rem; }
+.post-body h2 {
+  font-family: var(--heading-font);
+  font-size: 1.7rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.post-body h3 {
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+.post-body p { margin: 1.1rem 0; }
+.post-body ul, .post-body ol {
+  padding-left: 1.3rem;
+  margin: 1rem 0;
+}
+.post-body li { margin: 0.5rem 0; }
+.post-body blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem 0;
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  font-style: italic;
+  color: var(--muted);
+}
+.post-body code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.92em;
+  background: var(--card-border);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+.post-body pre {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.post-body pre code { background: none; padding: 0; }
+.post-body img {
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 28px -16px rgba(0, 0, 0, 0.3);
+}
+
+/* Post footer */
+.post-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--card-border);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.post-footer p { margin: 0.3rem 0; }
+.post-share a { color: var(--muted); border-bottom-color: var(--card-border); }
+
+/* Blog index */
+.blog-hero {
+  margin-bottom: 3rem;
+  text-align: left;
+}
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-list-item {
+  border-bottom: 1px solid var(--card-border);
+}
+.post-list-item:last-child { border-bottom: 0; }
+.post-list-item a {
+  display: block;
+  padding: 1.5rem 0;
+  text-decoration: none;
+  border-bottom: 0;
+  color: var(--text);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.post-list-item a:hover { opacity: 1; transform: translateX(4px); }
+.post-list-date {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+.post-list-title {
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  margin: 0 0 0.4rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.post-list-subtitle,
+.post-list-excerpt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.0rem;
+  line-height: 1.5;
+}
+.post-list-tag {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.post-empty {
+  padding: 3rem 0;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   YouTube auto-fetch (Traveler section)
+   ═══════════════════════════════════════════════════════════════════ */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+.video-card {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  border-bottom: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: var(--text);
+}
+.video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -16px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+.video-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #2a2a2a;
+  overflow: hidden;
+}
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.video-card:hover .video-play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--accent);
+}
+.video-meta {
+  padding: 0.85rem 0.95rem 1rem;
+}
+.video-meta h4 {
+  font-family: var(--heading-font);
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  line-height: 1.25;
+  font-weight: 700;
+  /* clamp to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.video-meta .video-date {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+.video-status {
+  color: var(--muted);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Sporty — subsection per sport + polaroid-style photo collage
+   Drop photos at sports/<slug>-1.jpg, -2.jpg, etc.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.sport-section {
+  margin-bottom: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--card-border);
+}
+.sport-section:first-of-type {
+  border-top: 0;
+  padding-top: 0.5rem;
+}
+.sport-heading {
+  font-family: var(--heading-font);
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-weight: 600;
+  line-height: 1.1;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px dotted var(--accent-dim);
+  width: fit-content;
+}
+.sport-blurb {
+  margin: 0 0 1.4rem;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+/* Polaroid collage */
+.polaroid-collage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 1.25rem;
+  justify-content: flex-start;
+  padding: 1.25rem 0.5rem 1.75rem;
+}
+.polaroid {
+  background: #ffffff;
+  padding: 12px 12px 8px;
+  margin: 0;
+  width: 180px;
+  border-radius: 2px;
+  box-shadow:
+    0 6px 16px -8px rgba(0, 0, 0, 0.35),
+    0 2px 4px rgba(0, 0, 0, 0.10);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  position: relative;
+}
+/* Casual scattered rotations */
+.polaroid:nth-child(5n+1) { transform: rotate(-3deg); }
+.polaroid:nth-child(5n+2) { transform: rotate(2deg); }
+.polaroid:nth-child(5n+3) { transform: rotate(-1.5deg); }
+.polaroid:nth-child(5n+4) { transform: rotate(3deg); }
+.polaroid:nth-child(5n+5) { transform: rotate(-2deg); }
+.polaroid:hover {
+  transform: rotate(0) translateY(-6px) scale(1.04);
+  box-shadow:
+    0 18px 36px -10px rgba(0, 0, 0, 0.4),
+    0 6px 10px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.polaroid-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(135deg, #dfe4ee 0%, #c4ccdb 60%, #b2bccf 100%);
+  overflow: hidden;
+}
+/* Subtle photo-corner mark inside the empty placeholder */
+.polaroid-img::after {
+  content: '📷';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  opacity: 0.35;
+  filter: grayscale(1);
+  z-index: 1;
+}
+.polaroid-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+.polaroid figcaption {
+  min-height: 1.6em;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  color: #5a5a55;
+  line-height: 1.2;
+}
+
+@media (max-width: 720px) {
+  .polaroid { width: calc(50% - 0.7rem); max-width: 170px; }
+  .polaroid-collage { gap: 1.2rem 0.8rem; justify-content: center; }
+  .sport-section { margin-bottom: 2.5rem; padding-top: 1.5rem; }
+}
+
+/* Graphic-design polaroid captions: title on top, year below */
+.design-collage figcaption .design-year {
+  display: block;
+  font-size: 0.85em;
+  opacity: 0.65;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* In-page section nav (sticky pill row used on Sporty + Rugged) */
+.section-nav {
+  position: sticky;
+  top: 0.6rem;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.7rem;
+  margin: 0.25rem 0 1.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px -8px rgba(0, 0, 0, 0.18);
+}
+.section-nav a {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  transition: background 0.18s, color 0.18s;
+}
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  background: var(--accent-dim);
+  color: var(--text);
+  outline: none;
+}
+/* Anchor offset so sticky nav doesn't overlap section headings */
+.content [id] { scroll-margin-top: 5rem; }
+
+/* Rugged-page trip subsections (Backpacking trip-by-trip) */
+.trip {
+  margin: 1.75rem 0 1.25rem;
+}
+.trip-heading {
+  font-family: var(--heading-font);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+.trip-heading .trip-meta {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-family: var(--body-font);
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.7;
+}
+.trip .polaroid-collage {
+  padding: 0.75rem 0.25rem 1rem;
+}
+
+/* Hiking log table (Rugged page) */
+.hike-log {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+.hike-log th,
+.hike-log td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--card-border);
+}
+.hike-log thead th {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+}
+.hike-log tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── All-time fave trips (Traveler page) ──────────────────────────── */
+.fave-trips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.fave-trip {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.fave-trip-photo {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--accent-dim) 0%, rgba(255,255,255,0.3) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.fave-trip-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fave-trip-body {
+  padding: 0.9rem 1rem 1.1rem;
+}
+.fave-trip-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+  font-family: var(--heading-font);
+}
+.fave-trip-meta {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+.fave-trip-highlights {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.fave-trip-highlights li { margin-bottom: 0.25rem; }
+
+/* ── Lightbox ───────────────────────────────────────────────────────── */
+.polaroid img,
+.lightbox-img { cursor: zoom-in; }
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 22, 40, 0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+  animation: lightbox-fade 0.18s ease;
+}
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.lightbox-figure {
+  margin: 0;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+.lightbox-large {
+  max-width: 92vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  cursor: default;
+  animation: lightbox-zoom 0.22s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+@keyframes lightbox-zoom {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.lightbox-figure figcaption {
+  color: #fff;
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  text-align: center;
+  max-width: 80vw;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  background: rgba(255, 255, 255, 0.28);
+  outline: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Traveler — interactive map + year-grouped timeline
+   ═══════════════════════════════════════════════════════════════════ */
+
+.travel-map-wrap {
+  height: 480px;
+  overflow: hidden;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: 0 18px 50px -22px rgba(0, 0, 0, 0.35);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 2.5rem;
+  position: relative;
+  background: #d6e9f5;
+}
+#travel-map { width: 100%; height: 100%; }
+.travel-map-fallback { padding: 1rem; text-align: center; color: var(--muted); }
+
+/* Soft sky-blue tint on the map. Voyager tiles already have light-blue water
+   and visible country borders, so just nudge the saturation/lightness instead
+   of recoloring (which was washing out the borders entirely). */
+body[data-theme="traveler"] .leaflet-container {
+  background: #d6e9f5;
+}
+body[data-theme="traveler"] .leaflet-tile-pane {
+  filter: saturate(0.85) brightness(1.02);
+}
+
+.travel-marker { background: transparent; border: none; }
+.travel-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--accent, #c4863a);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.travel-marker:hover .travel-dot { transform: scale(1.35); }
+
+/* Leaflet popup styled to match the theme */
+.leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+.leaflet-popup-content {
+  margin: 0.85rem 1rem 0.95rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.leaflet-popup-content strong {
+  font-family: var(--heading-font);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.leaflet-popup-content .popup-count {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.leaflet-popup-content .popup-events {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  border-top: 1px solid var(--card-border);
+  padding-top: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.leaflet-popup-content .popup-events li {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+}
+.leaflet-popup-content .popup-date {
+  display: inline-block;
+  width: 5.2rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.leaflet-popup-content .popup-more {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.leaflet-popup-tip { background: var(--card-bg); }
+.leaflet-container { font-family: var(--body-font); background: #dde6ef; }
+.leaflet-control-attribution { font-size: 0.65rem; opacity: 0.75; }
+
+/* ── Timeline ─────────────────────────────────────────────────────── */
+.travel-loading {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  padding: 2rem 0;
+}
+.travel-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  color: var(--muted);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.travel-stats strong {
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: 0.3rem;
+}
+
+.travel-year { margin-bottom: 2.5rem; }
+.travel-year-heading {
+  font-family: var(--heading-font);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  border-bottom: 2px solid var(--card-border);
+  padding-bottom: 0.3rem;
+}
+
+.travel-events { display: flex; flex-direction: column; }
+
+.travel-event {
+  display: grid;
+  grid-template-columns: 76px 1fr 190px;
+  grid-template-areas:
+    "month title place"
+    ".     note  note";
+  column-gap: 1rem;
+  row-gap: 0.2rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--card-border);
+  align-items: baseline;
+}
+.travel-event:last-child { border-bottom: 0; }
+.travel-event.not-attended { opacity: 0.55; }
+.travel-event.tentative { opacity: 0.88; }
+
+/* Inline status badge appended to the title */
+.event-badge {
+  display: inline-block;
+  margin-left: 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+.badge-tentative {
+  color: #8a6d2e;
+  background: rgba(196, 134, 58, 0.18);
+  border: 1px solid rgba(196, 134, 58, 0.35);
+}
+.badge-confirmed {
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.travel-event-month {
+  grid-area: month;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.travel-event-title { grid-area: title; font-weight: 500; line-height: 1.4; }
+.travel-event-place {
+  grid-area: place;
+  color: var(--muted);
+  font-size: 0.87rem;
+  text-align: right;
+  font-style: italic;
+}
+.travel-event-note {
+  grid-area: note;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 700px) {
+  .travel-map-wrap { height: 360px; }
+  .travel-event {
+    grid-template-columns: 70px 1fr;
+    grid-template-areas:
+      "month title"
+      "month place"
+      ".     note";
+    row-gap: 0.15rem;
+  }
+  .travel-event-place { text-align: left; font-size: 0.85rem; }
+  .travel-year-heading { font-size: 1.7rem; }
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .page { padding: 2rem 1rem 1rem; }
+  .portrait { width: 220px; margin-top: 1.75rem; }
+  .hero { gap: 1rem; margin-bottom: 2.5rem; }
+  .nav-title { font-size: 2.1rem; }
+  .nav-invite { font-size: 0.9rem; }
+  .hat-button { padding: 0.4rem 0.65rem 0.5rem; }
+  .hat-button-thumb { width: 38px; height: 28px; }
+  .hat-button-label { font-size: 0.7rem; }
+  .timeline-entry { grid-template-columns: 1fr; gap: 0.4rem; padding: 1.25rem 0; }
+  .year { font-size: 1.3rem; }
+  .feature { padding: 1.5rem 1.2rem; }
+  .stat-row { gap: 1.2rem; }
+  .stat-num { font-size: 1.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

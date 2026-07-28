@@ -32,7 +32,17 @@
       "Bash(git -C /mnt/c/Users/vtruong/Projects/van-truong.github.io status --short)",
       "Bash(grep -rln *)",
       "WebFetch(domain:arxiv.org)",
-      "WebFetch(domain:proceedings.mlr.press)"
+      "WebFetch(domain:proceedings.mlr.press)",
+      "Bash(git check-ignore *)",
+      "Bash(claude update *)",
+      "Bash(sed -i -e 's|#b8362d|#c0394a|' -e 's|#d24c40|#d65864|' -e 's|#5e1410|#5e141c|' -e 's|#7c1d18|#7e1e2a|g' beret.svg)",
+      "Bash(sed -i 's|#d63a3a|#c0394a|' baseball.svg)",
+      "Bash(sed -i -e 's|fill=\"#b54a1f\"/>|fill=\"#96303e\"/>|' -e 's|fill=\"#b54a1f\" opacity=\"0.35\"|fill=\"#96303e\" opacity=\"0.35\"|' -e 's|#e76533|#c0394a|' -e 's|#4a1f0a|#3d1019|' -e 's|#f59264|#e08a97|' -e 's|#ffa274|#eba7b0|' -e 's|<path d=\"M 140 20 L 158 25 L 140 31 Z\" fill=\"#c0394a\"/>|<path d=\"M 140 20 L 158 25 L 140 31 Z\" fill=\"#2e5c8a\"/>|' -e 's|#5a2a14|#6a2430|g' tent.svg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8741/preview/index.html)",
+      "Bash(mkdir -p preview/_shots)",
+      "Bash(\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=1280,2400 --screenshot=\"C:\\\\\\\\Users\\\\\\\\vtruong\\\\\\\\Projects\\\\\\\\van-truong.github.io\\\\\\\\preview\\\\\\\\_shots\\\\\\\\home.png\" \"http://localhost:8741/preview/index.html\")",
+      "Bash(\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=1280,1200 --screenshot=\"C:\\\\\\\\Users\\\\\\\\vtruong\\\\\\\\Projects\\\\\\\\van-truong.github.io\\\\\\\\preview\\\\\\\\_shots\\\\\\\\scientist.png\" \"http://localhost:8741/preview/index.html#scientist\")",
+      "Bash(\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=900,1000 --force-device-scale-factor=1.5 --screenshot=\"C:\\\\\\\\Users\\\\\\\\vtruong\\\\\\\\Projects\\\\\\\\van-truong.github.io\\\\\\\\preview\\\\\\\\_shots\\\\\\\\hero-zoom.png\" \"http://localhost:8741/preview/index.html#rugged\")"
     ]
   }
 }
