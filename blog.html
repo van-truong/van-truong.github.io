@@ -6,14 +6,15 @@ layout: null
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Van Quynh Thi Truong</title>
-  <meta name="description" content="Travel essays, vlogs, and notes from the road by Van Quynh Thi Truong.">
+  <title>Blog files — Van Quynh Thi Truong</title>
+  <meta name="description" content="Art, research, travel, and field notes by Van Quynh Thi Truong.">
+  <link rel="icon" href="{{ '/hats/fedora.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
-<body data-theme="traveler" class="reading">
+<body data-theme="win98" class="reading blog-files-page">
 
   <main class="page page--blog-index">
 
@@ -22,30 +23,66 @@ layout: null
     </nav>
 
     <header class="blog-hero">
-      <p class="post-kicker">from the road</p>
-      <h1 class="post-title">Blog</h1>
-      <p class="post-subtitle">Stories, essays, and the occasional vlog from wherever I happen to be.</p>
+      <p class="post-kicker">C:\\VAN\\BLOGS</p>
+      <h1 class="post-title">My Blog Files</h1>
+      <p class="post-subtitle">Stories, visual essays, research notes, and field recordings.</p>
     </header>
 
+    <section class="blog-index-intro" aria-label="About this blog">
+      <div>
+        <p class="blog-index-label">personal publishing department</p>
+        <p>A running collection of things I am thinking through, making, testing, and carrying around. Open a folder to browse by mood or subject.</p>
+      </div>
+      <div class="blog-index-meta">
+        <span>{{ site.posts.size }} files</span>
+        <a href="{{ '/' | relative_url }}#online">back to online</a>
+      </div>
+    </section>
+
     {% if site.posts.size > 0 %}
-      <ul class="post-list">
-        {% for post in site.posts %}
-          <li class="post-list-item">
-            <a href="{{ post.url | relative_url }}">
-              <time class="post-list-date" datetime="{{ post.date | date_to_xmlschema }}">
-                {{ post.date | date: "%b %-d, %Y" }}
-              </time>
-              <h2 class="post-list-title">{{ post.title }}</h2>
-              {% if post.subtitle %}
-                <p class="post-list-subtitle">{{ post.subtitle }}</p>
-              {% elsif post.excerpt %}
-                <p class="post-list-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
-              {% endif %}
-              {% if post.youtube %}<span class="post-list-tag">▶ video</span>{% endif %}
-            </a>
-          </li>
+      <div class="file-tree" role="list" aria-label="Blog files">
+        {% assign groups = "artist|ART,scientist|RESEARCH,traveler|TRAVEL,online|NOTES" | split: "," %}
+        {% for group in groups %}
+          {% assign pair = group | split: "|" %}
+          {% assign group_posts = site.posts | where: "section", pair[0] %}
+          {% if group_posts.size > 0 %}
+            <section class="file-tree-folder" aria-labelledby="folder-{{ pair[0] }}">
+              <h2 id="folder-{{ pair[0] }}" class="file-tree-folder-name"><span aria-hidden="true">▾</span> {{ pair[1] }}</h2>
+              <ul class="file-tree-list">
+                {% for post in group_posts %}
+                  <li class="file-tree-item" role="listitem">
+                    <a href="{{ post.url | relative_url }}" class="file-tree-link">
+                      <span class="file-tree-icon" aria-hidden="true">{% if post.skin == 'paint' %}🖼{% elsif post.skin == 'win98' %}▣{% else %}▤{% endif %}</span>
+                      <span class="file-tree-name">{{ post.title }}</span>
+                      <time class="file-tree-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+                      {% if post.notebook or post.notebook_html %}<span class="post-list-tag">ipynb</span>{% endif %}
+                      {% if post.youtube %}<span class="post-list-tag">video</span>{% endif %}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endif %}
         {% endfor %}
-      </ul>
+
+        {% assign uncategorized = site.posts | where_exp: "post", "post.section == nil" %}
+        {% if uncategorized.size > 0 %}
+          <section class="file-tree-folder" aria-labelledby="folder-archive">
+            <h2 id="folder-archive" class="file-tree-folder-name"><span aria-hidden="true">▾</span> ARCHIVE</h2>
+            <ul class="file-tree-list">
+              {% for post in uncategorized %}
+                <li class="file-tree-item" role="listitem">
+                  <a href="{{ post.url | relative_url }}" class="file-tree-link">
+                    <span class="file-tree-icon" aria-hidden="true">▤</span>
+                    <span class="file-tree-name">{{ post.title }}</span>
+                    <time class="file-tree-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+      </div>
     {% else %}
       <p class="post-empty">No posts yet — back soon.</p>
     {% endif %}
@@ -53,7 +90,7 @@ layout: null
   </main>
 
   <footer class="site-footer">
-    <p>© Van Quynh Thi Truong · <a href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a></p>
+    <p>© Van Quynh Thi Truong · <a href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a> · <a href="{{ '/credits/' | relative_url }}">credits</a></p>
   </footer>
 
 </body>

@@ -2,6 +2,9 @@
 title: "Exploring AI Usage in Creativity & Art"
 subtitle: "A semester journal from Professor Lisa Park's DSGN 5580 at Penn"
 date: 2024-05-15
+section: artist
+skin: paint
+type: visual-essay
 location: Philadelphia, PA
 # youtube: paste a video ID here if you want to embed a process video
 ---
