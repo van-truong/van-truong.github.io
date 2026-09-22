@@ -6,7 +6,7 @@ self-hosted Jekyll blog and an auto-fetching YouTube widget.
 ```
 .
 ├── index.html              ← main page (hats: home, scientist, artist,
-│                              sporty, outdoorsy, traveler)
+│                              sporty, rugged, online)
 ├── styles.css              ← base + one theme per hat + blog styles
 ├── app.js                  ← hat-swap + YouTube/blog auto-fetch
 ├── blog.html               ← Jekyll-processed blog index
@@ -120,6 +120,6 @@ GitHub Pages rebuilds automatically on every push to `main`.
 
 ## Deep links
 
-- `/#scientist`, `/#artist`, `/#sporty`, `/#outdoorsy`, `/#traveler`
+- `/#scientist`, `/#artist`, `/#sporty`, `/#rugged`, `/#online`
 - `/blog.html` — blog index
 - `/blog/YYYY/MM/DD/slug/` — individual posts

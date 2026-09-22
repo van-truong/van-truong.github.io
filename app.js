@@ -47,13 +47,6 @@ const hats = [
     alt: 'Tent',
   },
   {
-    id: 'traveler',
-    label: 'Traveler',
-    tagline: 'stories from the road',
-    asset: 'hats/bucket-globe.svg',
-    alt: 'Bucket hat with globe patch',
-  },
-  {
     id: 'online',
     label: 'Chronically<br>Online',
     tagline: 'currently scrolling',
@@ -143,14 +136,6 @@ function applyHat(id) {
   updateDockAria(id);
   setHash(id);
   currentHatId = id;
-
-  // Lazy-init the traveler map after the section becomes visible.
-  if (id === 'traveler' && typeof window.initTravelMap === 'function') {
-    setTimeout(() => {
-      window.initTravelMap();
-      window._travelMap?.invalidateSize();
-    }, 150);
-  }
 }
 
 function removeCurrentHat() {
@@ -174,6 +159,13 @@ function setTheme(id) {
 }
 
 function showSection(id) {
+  // The travel map lives on Home; (re)draw it whenever Home becomes visible.
+  if (id === 'home' && typeof window.initTravelMap === 'function') {
+    setTimeout(() => {
+      window.initTravelMap();
+      window._travelMap?.invalidateSize();
+    }, 150);
+  }
   document.querySelectorAll('[data-section]').forEach(s => {
     s.hidden = (s.dataset.section !== id);
   });

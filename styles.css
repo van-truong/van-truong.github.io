@@ -1986,6 +1986,9 @@ body[data-theme="traveler"] .leaflet-tile-pane {
   filter: saturate(0.85) brightness(1.02);
 }
 
+/* Soften the OSM tiles so the dots carry the color */
+.travel-tiles { filter: grayscale(0.55) saturate(0.7) brightness(1.04) contrast(0.95); }
+html[data-mode="dark"] .travel-tiles { filter: grayscale(0.7) invert(0.92) hue-rotate(180deg) brightness(0.85) contrast(0.9); }
 .travel-marker { background: transparent; border: none; }
 .travel-dot {
   width: 14px;
@@ -2209,7 +2212,7 @@ body[data-theme="traveler"] .leaflet-tile-pane {
 }
 
 /* ── Home: breathing room between contact links and the News feed ── */
-.subhead#news { margin-top: 3.5rem; }
+.subhead#news { margin-top: 3rem; }
 
 /* ── Desktop hero: portrait beside the name + hat dock so the first
       real content lands above the fold on a laptop screen ─────────── */
