@@ -1,14 +1,14 @@
 /* ═══════════════════════════════════════════════════════════════════
-   Traveler page — interactive world map + year-grouped timeline
+   Travel map (Home page) + year-grouped timeline (currently hidden)
    Data lives in EVENTS below. Add entries to update both the map and
-   the timeline simultaneously.
+   the timeline simultaneously. A writing queue built from this list
+   lives in _drafts/travel-stories-queue.md.
    ═══════════════════════════════════════════════════════════════════ */
 
 /* ── Location → [lat, lng] lookup ──────────────────────────────────── */
 const LOC_COORDS = {
   // 2026
   'Cape Town, South Africa':   [-33.92, 18.42],
-  'Sydney, Australia':         [-33.87, 151.21],
   'Barcelona, Spain':          [41.39, 2.17],
   'Washington, D.C.':          [38.91, -77.04],
   'Seoul, South Korea':        [37.57, 126.98],
@@ -98,7 +98,6 @@ function getCoords(loc) {
 /* ── Events ────────────────────────────────────────────────────────── */
 const EVENTS = [
   // ── 2026 ─────────────────────────────────────────────────────────
-  { year: 2026, month: 'Dec', event: 'NeurIPS 2026', location: 'Sydney, Australia', note: 'NeurIPS 2026 will be held in Sydney 6–12 December 2026.', attended: true, tentative: true },
   { year: 2026, month: 'Oct', event: 'Mozilla Fest', location: 'Barcelona, Spain', note: '', attended: true, tentative: true },
   { year: 2026, month: 'Jul', event: 'ISMB 2026 + BOSC 2026', location: 'Washington, D.C.', note: 'BOSC Organizer + lightning talk!', attended: true, confirmed: true },
   { year: 2026, month: 'Jul', event: 'ICML 2026', location: 'Seoul, South Korea', note: 'AI4GOOD Workshop Organizer!', attended: true, tentative: true },
@@ -341,10 +340,12 @@ function initTravelMap() {
     worldCopyJump: true,
   }).setView([30, 0], 2);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '© OpenStreetMap contributors · © CARTO',
-    subdomains: 'abcd',
-    maxZoom: 18,
+  // OpenStreetMap's standard tiles need no API key (CARTO's now do).
+  // Muted via CSS (.travel-tiles) so they sit quietly under the theme.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19,
+    className: 'travel-tiles',
   }).addTo(map);
 
   const dotIcon = L.divIcon({
@@ -397,4 +398,8 @@ function initTravelMap() {
 /* ── Wire it up ───────────────────────────────────────────────────── */
 renderNextStop();                // cheap — DOM only
 renderTravelTimeline();          // cheap — DOM only
-window.initTravelMap = initTravelMap;   // called by app.js when hat is selected
+window.initTravelMap = initTravelMap;   // also called by app.js whenever Home is shown
+
+// Home is the default section, so draw the map right away if it's visible.
+const homeSection = document.getElementById('content-home');
+if (homeSection && !homeSection.hidden) initTravelMap();
