@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} — Van Quynh Thi Truong</title>
   <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="icon" href="{{ '/hats/fedora.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
 </head>
-<body data-theme="traveler" class="reading">
+<body data-theme="{{ page.skin | default: 'traveler' }}" class="reading post-page post-skin--{{ page.skin | default: 'default' }}">
 
   <main class="page page--post">
 
@@ -24,6 +25,7 @@
       <header class="post-header">
         <p class="post-kicker">
           <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+          {% if page.updated %} · <span>updated {{ page.updated | date: "%B %-d, %Y" }}</span>{% endif %}
           {% if page.location %} · <span class="post-loc">{{ page.location }}</span>{% endif %}
         </p>
         <h1 class="post-title">{{ page.title }}</h1>
@@ -43,12 +45,22 @@
         </div>
       {% endif %}
 
+      {% if page.notebook_html or page.notebook %}
+        <aside class="post-file-panel" aria-label="Notebook files">
+          <strong>research file</strong>
+          {% if page.notebook_html %}<a href="{{ page.notebook_html | relative_url }}">open rendered notebook</a>{% endif %}
+          {% if page.notebook %}<a href="{{ page.notebook | relative_url }}" download>download .ipynb</a>{% endif %}
+        </aside>
+      {% endif %}
+
       <div class="post-body">
         {{ content }}
       </div>
 
       <footer class="post-footer">
         <p>— Van</p>
+        {% if page.skin == 'paint' %}<p class="post-credit">visual treatment: Paint / Sketch-inspired</p>{% endif %}
+        {% if page.skin == 'win98' %}<p class="post-credit">visual treatment: Windows-inspired</p>{% endif %}
         <p class="post-share">
           <a href="mailto:scientistvan@gmail.com">Reply by email</a>
         </p>
@@ -58,7 +70,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© Van Quynh Thi Truong · <a href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a></p>
+    <p>© Van Quynh Thi Truong · <a href="mailto:scientistvan@gmail.com">scientistvan@gmail.com</a> · <a href="{{ '/credits/' | relative_url }}">credits</a></p>
   </footer>
 
 </body>

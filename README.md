@@ -37,12 +37,32 @@ subtitle: "Optional one-liner under the title."
 date: 2026-06-12
 location: Cape Town, South Africa
 youtube: dQw4w9WgXcQ        # optional — embeds the video at the top
+section: traveler            # artist, scientist, traveler, or online
+skin: traveler               # default, paint, win98, or an existing theme
+type: field-note              # optional content label
+updated: 2026-06-01           # optional visible revision date
 ---
 
 Markdown body goes here. Headers, lists, links, images — all standard.
 ```
 
 The post will appear at `/blog/2026/06/12/my-second-post/` and on `/blog.html`.
+
+## Research notebooks and interactive figures
+
+Jupyter notebooks can be published as two related files: a rendered HTML copy
+for reading in the post and the original `.ipynb` for download and rerunning.
+Keep both files in the repository, then add their paths to the post frontmatter:
+
+```yaml
+notebook_html: /notebooks/my-analysis.html
+notebook: /notebooks/my-analysis.ipynb
+```
+
+The post layout will show links to open the rendered notebook and download the
+source notebook. Standalone HTML figures and HTML slide decks can be embedded
+the same way, preferably in responsive iframes so their JavaScript and CSS do
+not interfere with the main site.
 
 ## YouTube auto-fetch (Traveler page)
 

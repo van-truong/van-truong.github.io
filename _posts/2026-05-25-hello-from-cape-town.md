@@ -2,6 +2,9 @@
 title: "Hello from Cape Town"
 subtitle: "Two weeks into the AI residency, and the first post on this thing."
 date: 2026-05-25
+section: traveler
+skin: traveler
+type: field-note
 location: Cape Town, South Africa
 # youtube: dQw4w9WgXcQ   ← uncomment and paste a YouTube video ID to embed
 ---
