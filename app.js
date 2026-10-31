@@ -9,7 +9,7 @@
         --bg, --text, --accent, --heading-font etc. you want.
    ═══════════════════════════════════════════════════════════════════ */
 
-const hats = [
+const allHats = [
   {
     id: 'home',
     label: 'Home',
@@ -20,6 +20,7 @@ const hats = [
   },
   {
     id: 'scientist',
+    retired: true,  // hidden Oct 2026 while the content is reworked
     label: 'PhDiva',
     tagline: 'computational scientist',
     asset: 'hats/phd.svg',
@@ -41,6 +42,7 @@ const hats = [
   },
   {
     id: 'rugged',
+    retired: true,  // hidden Oct 2026 while the content is reworked
     label: 'Rugged',
     tagline: 'outdoors & wild',
     asset: 'hats/tent.svg',
@@ -48,12 +50,17 @@ const hats = [
   },
   {
     id: 'online',
+    retired: true,  // hidden Oct 2026 while the content is reworked
     label: 'Chronically<br>Online',
     tagline: 'currently scrolling',
     asset: 'hats/phone.svg',
     alt: 'Smartphone balanced on head',
   },
 ];
+
+// Hats marked `retired` get no dock button and no deep link; their
+// <section> stays in index.html (hidden) so the content can be reused.
+const hats = allHats.filter(h => !h.retired);
 
 const HAT_LEAVE_MS = 500;
 

@@ -101,3 +101,6 @@ DRAFT*.md
 scratch/
 drafts/
 2026-05-25_Google Domains.pdf.bundle/
+
+# Private records: never commit
+*.pdf
