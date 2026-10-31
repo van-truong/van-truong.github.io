@@ -41,6 +41,9 @@ exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
+  - PHOTOS.md
+  - credits.md
+  - _check_home.png
   - vendor
   - node_modules
 
